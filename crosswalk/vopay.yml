@@ -1,0 +1,29 @@
+provider: vopay
+apis_io: https://apis.io/providers/vopay/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/vopay-verification.json#POST /account-verification/card
+  card_transaction:
+    path_segment:
+    - transaction
+    - transactions
+    properties:
+      amount: Amount
+      merchant: MerchantName
+      currency: Currency
+      transaction_id: TransactionID
+      updated_at: LastModified
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/vopay-account-api-reference.json#GET /account/subaccount/transactions
+    - openapi/_original/vopay-account-api-reference.json#GET /account/transactions
+    - openapi/_original/vopay-account-api-reference.json#GET /partner/account/transactions
+    - openapi/_original/vopay-bill-pay-references.json#GET /bill-pay/transaction
+    - openapi/_original/vopay-client-accounts.json#GET /account/client-accounts/transactions

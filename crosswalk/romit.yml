@@ -1,0 +1,25 @@
+provider: romit
+apis_io: https://apis.io/providers/romit/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      name:
+      - label
+      - name
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/romit-openapi.yml#GET /banking/card/{id}
+    - openapi/_original/romit-openapi.yml#POST /banking/card
+    - openapi/_original/romit-openapi.yml#PUT /banking/card/{id}
+  cardholder:
+    path_segment:
+    - user
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/romit-openapi.yml#GET /user
+    - openapi/_original/romit-openapi.yml#GET /user/{id}

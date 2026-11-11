@@ -1,0 +1,57 @@
+provider: novopayment
+apis_io: https://apis.io/providers/novopayment/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: cardStatus
+      type: cardType
+      cardholder_id: userToken
+      card_id: cardToken
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/novopayment-cards-openapi.yml#GET /cards/{cardId}
+    - openapi/_original/novopayment-cards.yaml#GET /cards/{cardId}
+  cardholder:
+    path_segment:
+    - cardholders
+    - employees
+    properties:
+      email: email
+      last_name: lastName
+      first_name: firstName
+      phone: phone
+      status: state
+      billing_address: address
+      date_of_birth: birthDate
+      cardholder_id:
+      - userId
+      - customerId
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/novopayment-cards-openapi.yml#POST /cards/cardholders
+    - openapi/_original/novopayment-cards-openapi.yml#PUT /cards/cardholders
+    - openapi/_original/novopayment-cards.yaml#POST /cards/cardholders
+    - openapi/_original/novopayment-cards.yaml#PUT /cards/cardholders
+    - openapi/_original/novopayment-customers-openapi.yml#POST /customers/{customerId}/employees
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      merchant:
+      - description
+      - merchantName
+      created_at: creationDate
+      type: transactionType
+      transaction_id: transactionId
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/novopayment-accounts-openapi.yml#GET /customers/{customerId}/accounts/{accountId}/transactions
+    - openapi/_original/novopayment-accounts-openapi.yml#GET /customers/{customerId}/cards/{cardId}/transactions
+    - openapi/_original/novopayment-accounts-openapi.yml#GET /transactions
+    - openapi/_original/novopayment-accounts-openapi.yml#POST /customers/{customerId}/accounts/{accountId}/transactions
+    - openapi/_original/novopayment-accounts.yaml#GET /customers/{customerId}/accounts/{accountId}/transactions

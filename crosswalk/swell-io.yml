@@ -1,0 +1,34 @@
+provider: swell-io
+apis_io: https://apis.io/providers/swell-io/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/swell-backend-api-openapi.yml#GET /accounts/{id}/cards
+    - openapi/_original/swell-backend-api-openapi.yml#POST /accounts/{id}/cards
+    - openapi/_original/swell-frontend-api-openapi.yml#DELETE /api/account/cards/{id}
+    - openapi/_original/swell-frontend-api-openapi.yml#GET /api/account/cards
+    - openapi/_original/swell-frontend-api-openapi.yml#POST /api/account/cards
+  card_program:
+    path_segment:
+    - products
+    properties:
+      created_at: date_created
+      id: id
+      name: name
+      description: description
+      active: active
+      currency: currency
+      images: images
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/swell-backend-api-openapi.yml#DELETE /products/{id}
+    - openapi/_original/swell-backend-api-openapi.yml#GET /products
+    - openapi/_original/swell-backend-api-openapi.yml#GET /products/{id}
+    - openapi/_original/swell-backend-api-openapi.yml#POST /products
+    - openapi/_original/swell-backend-api-openapi.yml#PUT /products/{id}

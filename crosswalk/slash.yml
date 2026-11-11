@@ -1,0 +1,41 @@
+provider: slash
+apis_io: https://apis.io/providers/slash/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      status: status
+      id: id
+      last4: last4
+      type: type
+      created_at: createdAt
+      name: name
+      account_id: accountId
+      exp_month: expiryMonth
+      exp_year: expiryYear
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/slash-openapi-original.json#GET /card
+    - openapi/_original/slash-openapi-original.json#GET /card/{cardId}
+    - openapi/_original/slash-openapi-original.json#PATCH /card/{cardId}
+    - openapi/_original/slash-openapi-original.json#POST /card
+  card_transaction:
+    path_segment:
+    - transaction
+    - transactions
+    properties:
+      amount: amountCents
+      id: id
+      status: status
+      merchant:
+      - description
+      - merchantData
+      card_id: cardId
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/slash-openapi-original.json#GET /fdx/accounts/{accountId}/transactions
+    - openapi/_original/slash-openapi-original.json#GET /transaction
+    - openapi/_original/slash-openapi-original.json#GET /transaction/{transactionId}

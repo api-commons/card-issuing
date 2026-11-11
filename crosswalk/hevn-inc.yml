@@ -1,0 +1,66 @@
+provider: hevn-inc
+apis_io: https://apis.io/providers/hevn-inc/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      created_at:
+      - created
+      - createdAt
+      name: label
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#DELETE /api/v1/accounts/cards/{card_id}
+    - openapi/_original/hevn-inc-openapi-original.json#DELETE /api/v1/cards/{card_id}
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/accounts/cards
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/accounts/cards/{card_id}
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/cards
+  cardholder:
+    path_segment:
+    - user
+    - users
+    properties:
+      email: email
+      last_name: lastName
+      id: id
+      first_name: firstName
+      phone: phone
+      created_at: createdAt
+      billing_address: address
+      date_of_birth: birthDate
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/user
+    - openapi/_original/hevn-inc-openapi-original.json#POST /api/v1/webhook/wirex/webhook/users
+  card_transaction:
+    path_segment:
+    - transactions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/transactions
+  card_program:
+    path_segment:
+    - products
+    properties:
+      created_at: createdAt
+      id: id
+      name: name
+      updated_at: updatedAt
+      description: description
+      active: active
+      currency: currency
+      images: images
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#DELETE /api/v1/merchant/products/{product_id}
+    - openapi/_original/hevn-inc-openapi-original.json#DELETE /api/v1/transactions/merchant/products/{product_id}
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/merchant/products
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/merchant/products/{product_id}
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/public/products/{product_id}

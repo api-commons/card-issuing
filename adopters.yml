@@ -1,0 +1,434 @@
+context: card-issuing
+generated: '2026-11-10'
+adopters:
+- provider: agentcard
+  apis_io: https://apis.io/providers/agentcard/
+  crosswalk: crosswalk/agentcard.yml
+  concepts:
+  - card
+- provider: alviere
+  apis_io: https://apis.io/providers/alviere/
+  crosswalk: crosswalk/alviere.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: astrada
+  apis_io: https://apis.io/providers/astrada/
+  crosswalk: crosswalk/astrada.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: block
+  apis_io: https://apis.io/providers/block/
+  crosswalk: crosswalk/block.yml
+  concepts:
+  - card
+  - card_program
+  - card_transaction
+  - cardholder
+- provider: bond
+  apis_io: https://apis.io/providers/bond/
+  crosswalk: crosswalk/bond.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+- provider: bp
+  apis_io: https://apis.io/providers/bp/
+  crosswalk: crosswalk/bp.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: bread-financial
+  apis_io: https://apis.io/providers/bread-financial/
+  crosswalk: crosswalk/bread-financial.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: brex
+  apis_io: https://apis.io/providers/brex/
+  crosswalk: crosswalk/brex.yml
+  concepts:
+  - card
+  - cardholder
+- provider: btg-pactual
+  apis_io: https://apis.io/providers/btg-pactual/
+  crosswalk: crosswalk/btg-pactual.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - cardholder
+- provider: bunq
+  apis_io: https://apis.io/providers/bunq/
+  crosswalk: crosswalk/bunq.yml
+  concepts:
+  - card
+  - cardholder
+- provider: chrome-river
+  apis_io: https://apis.io/providers/chrome-river/
+  crosswalk: crosswalk/chrome-river.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: clarafintech
+  apis_io: https://apis.io/providers/clarafintech/
+  crosswalk: crosswalk/clarafintech.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: cross-river
+  apis_io: https://apis.io/providers/cross-river/
+  crosswalk: crosswalk/cross-river.yml
+  concepts:
+  - card
+- provider: crossmint
+  apis_io: https://apis.io/providers/crossmint/
+  crosswalk: crosswalk/crossmint.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: defacto
+  apis_io: https://apis.io/providers/defacto/
+  crosswalk: crosswalk/defacto.yml
+  concepts:
+  - card
+- provider: emburse
+  apis_io: https://apis.io/providers/emburse/
+  crosswalk: crosswalk/emburse.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: enfuce
+  apis_io: https://apis.io/providers/enfuce/
+  crosswalk: crosswalk/enfuce.yml
+  concepts:
+  - card
+- provider: falcon
+  apis_io: https://apis.io/providers/falcon/
+  crosswalk: crosswalk/falcon.yml
+  concepts:
+  - card
+  - cardholder
+  - spending_control
+- provider: fiserv
+  apis_io: https://apis.io/providers/fiserv/
+  crosswalk: crosswalk/fiserv.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - spending_control
+- provider: float-financial
+  apis_io: https://apis.io/providers/float-financial/
+  crosswalk: crosswalk/float-financial.yml
+  concepts:
+  - card
+  - cardholder
+- provider: galileo-fs
+  apis_io: https://apis.io/providers/galileo-fs/
+  crosswalk: crosswalk/galileo-fs.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: hevn-inc
+  apis_io: https://apis.io/providers/hevn-inc/
+  crosswalk: crosswalk/hevn-inc.yml
+  concepts:
+  - card
+  - card_program
+  - card_transaction
+  - cardholder
+- provider: increase
+  apis_io: https://apis.io/providers/increase/
+  crosswalk: crosswalk/increase.yml
+  concepts:
+  - card
+  - card_program
+  - card_transaction
+- provider: interswitch
+  apis_io: https://apis.io/providers/interswitch/
+  crosswalk: crosswalk/interswitch.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: jack-henry
+  apis_io: https://apis.io/providers/jack-henry/
+  crosswalk: crosswalk/jack-henry.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - cardholder
+- provider: joinslash-com
+  apis_io: https://apis.io/providers/joinslash-com/
+  crosswalk: crosswalk/joinslash-com.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: lead-bank
+  apis_io: https://apis.io/providers/lead-bank/
+  crosswalk: crosswalk/lead-bank.yml
+  concepts:
+  - card
+- provider: lianlian-global
+  apis_io: https://apis.io/providers/lianlian-global/
+  crosswalk: crosswalk/lianlian-global.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: light
+  apis_io: https://apis.io/providers/light/
+  crosswalk: crosswalk/light.yml
+  concepts:
+  - card
+  - card_program
+  - cardholder
+- provider: lightspark
+  apis_io: https://apis.io/providers/lightspark/
+  crosswalk: crosswalk/lightspark.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+- provider: lithic-com
+  apis_io: https://apis.io/providers/lithic-com/
+  crosswalk: crosswalk/lithic-com.yml
+  concepts:
+  - card
+  - card_program
+  - card_transaction
+  - cardholder
+  - spending_control
+- provider: marqeta
+  apis_io: https://apis.io/providers/marqeta/
+  crosswalk: crosswalk/marqeta.yml
+  concepts:
+  - authorization
+  - card
+  - card_program
+  - card_transaction
+  - cardholder
+  - spending_control
+- provider: mercury
+  apis_io: https://apis.io/providers/mercury/
+  crosswalk: crosswalk/mercury.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: modulr
+  apis_io: https://apis.io/providers/modulr/
+  crosswalk: crosswalk/modulr.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+- provider: moov
+  apis_io: https://apis.io/providers/moov/
+  crosswalk: crosswalk/moov.yml
+  concepts:
+  - authorization
+  - card
+  - card_program
+  - card_transaction
+- provider: narmi
+  apis_io: https://apis.io/providers/narmi/
+  crosswalk: crosswalk/narmi.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+  - spending_control
+- provider: novopayment
+  apis_io: https://apis.io/providers/novopayment/
+  crosswalk: crosswalk/novopayment.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: orum
+  apis_io: https://apis.io/providers/orum/
+  crosswalk: crosswalk/orum.yml
+  concepts:
+  - card
+- provider: outdoorsy
+  apis_io: https://apis.io/providers/outdoorsy/
+  crosswalk: crosswalk/outdoorsy.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - cardholder
+- provider: pin-payments
+  apis_io: https://apis.io/providers/pin-payments/
+  crosswalk: crosswalk/pin-payments.yml
+  concepts:
+  - card
+- provider: pismo
+  apis_io: https://apis.io/providers/pismo/
+  crosswalk: crosswalk/pismo.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+- provider: raiffeisen-ru
+  apis_io: https://apis.io/providers/raiffeisen-ru/
+  crosswalk: crosswalk/raiffeisen-ru.yml
+  concepts:
+  - card
+  - card_transaction
+  - spending_control
+- provider: ramp
+  apis_io: https://apis.io/providers/ramp/
+  crosswalk: crosswalk/ramp.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: revolut
+  apis_io: https://apis.io/providers/revolut/
+  crosswalk: crosswalk/revolut.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: romit
+  apis_io: https://apis.io/providers/romit/
+  crosswalk: crosswalk/romit.yml
+  concepts:
+  - card
+  - cardholder
+- provider: slash
+  apis_io: https://apis.io/providers/slash/
+  crosswalk: crosswalk/slash.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: slope
+  apis_io: https://apis.io/providers/slope/
+  crosswalk: crosswalk/slope.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: soldo
+  apis_io: https://apis.io/providers/soldo/
+  crosswalk: crosswalk/soldo.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: soldo-software-and-services
+  apis_io: https://apis.io/providers/soldo-software-and-services/
+  crosswalk: crosswalk/soldo-software-and-services.yml
+  concepts:
+  - card
+  - card_transaction
+  - cardholder
+- provider: sponge
+  apis_io: https://apis.io/providers/sponge/
+  crosswalk: crosswalk/sponge.yml
+  concepts:
+  - card
+- provider: square
+  apis_io: https://apis.io/providers/square/
+  crosswalk: crosswalk/square.yml
+  concepts:
+  - card
+  - card_program
+  - card_transaction
+  - cardholder
+- provider: stripe
+  apis_io: https://apis.io/providers/stripe/
+  crosswalk: crosswalk/stripe.yml
+  concepts:
+  - authorization
+  - card
+  - card_program
+  - card_transaction
+  - cardholder
+- provider: swell-io
+  apis_io: https://apis.io/providers/swell-io/
+  crosswalk: crosswalk/swell-io.yml
+  concepts:
+  - card
+  - card_program
+- provider: synctera
+  apis_io: https://apis.io/providers/synctera/
+  crosswalk: crosswalk/synctera.yml
+  concepts:
+  - authorization
+  - card
+  - card_program
+  - card_transaction
+- provider: tap-payments
+  apis_io: https://apis.io/providers/tap-payments/
+  crosswalk: crosswalk/tap-payments.yml
+  concepts:
+  - card
+- provider: temenos
+  apis_io: https://apis.io/providers/temenos/
+  crosswalk: crosswalk/temenos.yml
+  concepts:
+  - card
+  - card_program
+  - card_transaction
+- provider: tietoevry
+  apis_io: https://apis.io/providers/tietoevry/
+  crosswalk: crosswalk/tietoevry.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - cardholder
+- provider: total-system-services
+  apis_io: https://apis.io/providers/total-system-services/
+  crosswalk: crosswalk/total-system-services.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: treasury-prime
+  apis_io: https://apis.io/providers/treasury-prime/
+  crosswalk: crosswalk/treasury-prime.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: unit-co
+  apis_io: https://apis.io/providers/unit-co/
+  crosswalk: crosswalk/unit-co.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - spending_control
+- provider: uzum
+  apis_io: https://apis.io/providers/uzum/
+  crosswalk: crosswalk/uzum.yml
+  concepts:
+  - card
+  - spending_control
+- provider: vopay
+  apis_io: https://apis.io/providers/vopay/
+  crosswalk: crosswalk/vopay.yml
+  concepts:
+  - card
+  - card_transaction
+- provider: wise
+  apis_io: https://apis.io/providers/wise/
+  crosswalk: crosswalk/wise.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - cardholder
+- provider: wordline
+  apis_io: https://apis.io/providers/wordline/
+  crosswalk: crosswalk/wordline.yml
+  concepts:
+  - authorization
+  - card
+  - card_transaction
+  - cardholder

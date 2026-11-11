@@ -1,0 +1,47 @@
+provider: pismo
+apis_io: https://apis.io/providers/pismo/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: last_four_digits
+      type: type
+      created_at: created_at
+      cardholder_id: customer_id
+      account_id: account_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pismo-openapi.yml#GET /wallet/v1/cards/{cardId}
+    - openapi/_original/pismo-openapi.yml#POST /wallet/v2/cards
+  authorization:
+    path_segment:
+    - authorizations
+    properties:
+      amount: amount
+      id: id
+      merchant: merchant_name
+      card_id: card_id
+      currency: currency
+      status: status
+      merchant_category_code: mcc
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pismo-openapi.yml#GET /accounts/v1/accounts/{accountId}/authorizations
+    - openapi/_original/pismo-openapi.yml#GET /accounts/v1/accounts/{accountId}/authorizations/{authorizationId}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      merchant: description
+      type: type
+      currency: currency
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/pismo-openapi.yml#GET /accounts/v2/accounts/{accountId}/statements/{statementId}/transactions

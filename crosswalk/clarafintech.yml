@@ -1,0 +1,54 @@
+provider: clarafintech
+apis_io: https://apis.io/providers/clarafintech/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: uuid
+      last4: maskedPan
+      type: type
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/clarafintech-openapi.json#DELETE /api/v3/cards/{uuid}
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/cards
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/cards/{uuid}
+    - openapi/_original/clarafintech-openapi.json#POST /api/v3/cards
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: lastName
+      id: uuid
+      phone: mobilePhone
+      status: status
+      created_at: createdAt
+      name:
+      - name
+      - fullName
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/clarafintech-openapi.json#DELETE /api/v3/users/{uuid}
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/users
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/users/{uuid}
+    - openapi/_original/clarafintech-openapi.json#PATCH /api/v3/users/{uuid}
+    - openapi/_original/clarafintech-openapi.json#POST /api/v3/users
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amountValue
+      id: uuid
+      status: status
+      merchant: merchant
+      type: type
+      card_id: card
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/billing-statements/{uuid}/transactions
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/transactions
+    - openapi/_original/clarafintech-openapi.json#GET /api/v3/transactions/{uuid}

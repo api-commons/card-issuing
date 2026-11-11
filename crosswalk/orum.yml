@@ -1,0 +1,23 @@
+provider: orum
+apis_io: https://apis.io/providers/orum/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: last4
+      created_at: created_at
+      metadata: metadata
+      exp_month: expiration_month
+      exp_year: expiration_year
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/orum-openapi-original.yml#DELETE /deliver/cards/{id}
+    - openapi/_original/orum-openapi-original.yml#GET /deliver/cards
+    - openapi/_original/orum-openapi-original.yml#GET /deliver/cards/{id}
+    - openapi/_original/orum-openapi-original.yml#POST /deliver/cards

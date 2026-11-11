@@ -1,0 +1,32 @@
+provider: bunq
+apis_io: https://apis.io/providers/bunq/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      status: status
+      id:
+      - id
+      - Id
+      type: type
+      created_at: created
+      expires_at: expiry_date
+      cardholder_id: user_id
+      name: name_on_card
+      updated_at: updated
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/bunq-openapi.json#GET /user/{userID}/card
+    - openapi/_original/bunq-openapi.json#GET /user/{userID}/card/{itemId}
+    - openapi/_original/bunq-openapi.json#PUT /user/{userID}/card/{itemId}
+  cardholder:
+    path_segment:
+    - user
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/bunq-openapi.json#GET /user
+    - openapi/_original/bunq-openapi.json#GET /user/{itemId}

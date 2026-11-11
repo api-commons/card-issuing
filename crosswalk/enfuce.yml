@@ -1,0 +1,23 @@
+provider: enfuce
+apis_io: https://apis.io/providers/enfuce/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: cardStatus
+      id: id
+      last4: maskedPan
+      created_at: createdAt
+      expires_at: expirationTime
+      cardholder_id: cardholderId
+      account_id: accountId
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/card.openapi.json#GET /v1/cards
+    - openapi/_original/card.openapi.json#GET /v1/cards/{id}
+    - openapi/_original/card.openapi.json#PATCH /v1/cards/{id}
+    - openapi/_original/card.openapi.json#POST /v1/cards

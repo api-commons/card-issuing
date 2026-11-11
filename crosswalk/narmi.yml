@@ -1,0 +1,64 @@
+provider: narmi
+apis_io: https://apis.io/providers/narmi/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: state
+      id: id
+      last4: last_four_digits
+      type: card_type
+      name: name
+      brand: network
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/cards/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/cards/{card_id}/
+    - openapi/_original/narmi-public-openapi-original.yml#PUT /v1/cards/{card_id}/
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: last_name
+      id: id
+      first_name: first_name
+      billing_address: addresses
+      updated_at: updated_at
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/users/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/users/{user_uuid}/
+    - openapi/_original/narmi-public-openapi-original.yml#PUT /v1/users/{user_uuid}/
+  card_transaction:
+    path_segment:
+    - transaction
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      merchant:
+      - description
+      - merchant
+      created_at: created_at
+      type: type
+      settled_at: settled_at
+      updated_at: updated_at
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/narmi-public-openapi-original.yml#DELETE /v1/alerts/transaction/{uuid}/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/accounts/{account_uuids}/transactions/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/alerts/transaction/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/alerts/transaction/{uuid}/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/transactions/
+  spending_control:
+    path_segment:
+    - limits
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/cards/{card_id}/limits/
+    - openapi/_original/narmi-public-openapi-original.yml#POST /v1/cards/{card_id}/limits/

@@ -1,0 +1,35 @@
+provider: bread-financial
+apis_io: https://apis.io/providers/bread-financial/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      status: status
+      last4: lastFour
+      type: card_type
+      expires_at: expiry
+      card_id:
+      - cardToken
+      - cardID
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/bread-checkout-openapi.json#GET /api/virtual-card/issuance/{lookupKey}/card
+  card_transaction:
+    path_segment:
+    - transaction
+    properties:
+      amount: totalAmount
+      id: id
+      status: status
+      merchant: description
+      created_at: createdAt
+      updated_at: updatedAt
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/bread-merchant-operations-openapi.json#GET /api/reporting/report/transaction
+    - openapi/_original/bread-merchant-operations-openapi.json#GET /api/transaction
+    - openapi/_original/bread-merchant-operations-openapi.json#GET /api/transaction/{transactionID}
+    - openapi/_original/bread-merchant-operations-openapi.json#PATCH /api/transaction/{transactionID}

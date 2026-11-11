@@ -1,0 +1,45 @@
+provider: astrada
+apis_io: https://apis.io/providers/astrada/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      created_at: createdAt
+      brand: network
+      exp_month: expiryMonth
+      exp_year: expiryYear
+      updated_at: updatedAt
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/astrada-openapi-original.json#GET /cards
+    - openapi/_original/astrada-openapi-original.json#GET /cards/{cardId}
+  cardholder:
+    path_segment:
+    - cardholder
+    properties:
+      email: email
+      last_name: lastName
+      first_name: firstName
+      created_at: createdAt
+      updated_at: updatedAt
+    core_coverage: 0.6
+    evidence:
+    - openapi/_original/astrada-openapi-original.json#GET /cards/{cardId}/cardholder
+    - openapi/_original/astrada-openapi-original.json#PATCH /cards/{cardId}/cardholder
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      card_id: cardId
+      updated_at: updatedAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/astrada-openapi-original.json#GET /transactions
+    - openapi/_original/astrada-openapi-original.json#GET /transactions/{transactionId}

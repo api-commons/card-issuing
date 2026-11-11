@@ -1,0 +1,60 @@
+aid: common-card-issuing
+name: Card Issuing
+type: Common
+description: 'The common Card Issuing vocabulary, distilled from the harvested OpenAPI of 740 providers in APIs.io:
+  shared operations, JSON Schema per concept with measured adoption, and a crosswalk from the common names to each
+  provider''s own.'
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Application Programming Interface
+- API
+- Card Issuing
+- Issuing
+- Payments
+- Corporate Cards
+- Common Schema
+created: '2026-11-10'
+modified: '2026-11-10'
+url: https://raw.githubusercontent.com/api-commons/card-issuing/main/apis.yml
+specificationVersion: '0.20'
+apis:
+- aid: common-card-issuing:card-issuing
+  name: Common Card Issuing Interface
+  description: The Card Issuing interface the market already shares, measured.
+  humanURL: https://github.com/api-commons/card-issuing
+  tags:
+  - Card Issuing
+  - Issuing
+  properties:
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/openapi.yml
+  - type: Profile
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/profile.yml
+  - type: Adopters
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/adopters.yml
+  - type: Rules
+    url: https://raw.githubusercontent.com/api-commons/schema-commons/main/ruleset/schema-commons-naming.yaml
+  - type: JSONSchema
+    name: card
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/card.json
+  - type: JSONSchema
+    name: cardholder
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/cardholder.json
+  - type: JSONSchema
+    name: authorization
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/authorization.json
+  - type: JSONSchema
+    name: card_transaction
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/card_transaction.json
+  - type: JSONSchema
+    name: spending_control
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/spending_control.json
+  - type: JSONSchema
+    name: card_program
+    url: https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/card_program.json
+common:
+- type: License
+  url: https://raw.githubusercontent.com/api-commons/card-issuing/main/LICENSE
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/card_program.json",
+  "title": "Card Program",
+  "description": "The common card_program in Card Issuing, distilled from 12 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "created_at",
+        "created",
+        "createdAt",
+        "created_time",
+        "createdOn",
+        "date_created"
+      ],
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "id",
+        "token",
+        "card_program_id"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.667,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "name",
+        "title"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "updated_at",
+        "last_modified_time",
+        "updatedAt",
+        "updated_time"
+      ],
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.417,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "description"
+      ]
+    },
+    "active": {
+      "type": "boolean",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.333,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "active"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code"
+      ]
+    },
+    "images": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "images"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "status"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "card-issuing",
+    "concept": "card_program",
+    "providers": 12,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

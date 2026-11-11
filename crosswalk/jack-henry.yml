@@ -1,0 +1,59 @@
+provider: jack-henry
+apis_io: https://apis.io/providers/jack-henry/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: last4
+      type: cardType
+      expires_at: expirationDate
+      name: nameOnCard
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/cards
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: lastName
+      id: id
+      first_name: firstName
+      phone: phone
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}
+  authorization:
+    path_segment:
+    - authorizations
+    properties:
+      amount: amount
+      id: id
+      card_id: cardToken
+      currency: currency
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/cards/authorizations
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      status: status
+      merchant:
+      - description
+      - merchant
+      type: type
+      settled_at: postedDate
+      transaction_id: transactionId
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/accounts/{accountId}/transactions
+    - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/accounts/{accountId}/transactions/{transactionId}
+    - openapi/_original/jxchange-rest-openapi.yml#GET /jxchange/v1/accounts/{accountNumber}/transactions

@@ -1,0 +1,16 @@
+provider: sponge
+apis_io: https://apis.io/providers/sponge/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    - virtual-cards
+    properties:
+      type: card_type
+      currency: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/sponge-openapi-original.json#POST /api/cards
+    - openapi/_original/sponge-openapi-original.json#POST /api/virtual-cards

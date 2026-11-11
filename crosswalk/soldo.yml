@@ -1,0 +1,60 @@
+provider: soldo
+apis_io: https://apis.io/providers/soldo/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: masked_pan
+      type: type
+      expires_at: expiration_date
+      name:
+      - name
+      - label
+      currency: currency_code
+      account_id: wallet_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#DELETE /business/v2/cards/{cardId}
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#GET /business/v2/cards
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#GET /business/v2/cards/{cardId}
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#POST /business/v2/cards
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#PUT /business/v2/cards/{cardId}
+  cardholder:
+    path_segment:
+    - employees
+    properties:
+      email: email
+      last_name: surname
+      id: id
+      phone: mobile
+      status: status
+      date_of_birth: dob
+      name: name
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#DELETE /business/v2/employees/{userId}
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#GET /business/v2/employees
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#GET /business/v2/employees/{userId}
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#PUT /business/v2/employees/{userId}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      status: status
+      merchant: merchant
+      card_id: card_id
+      settled_at: settlement_date
+      updated_at: update_time
+      cardholder_id: owner_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#GET /business/v2/transactions
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#GET /business/v2/transactions/{transactionId}
+    - openapi/_original/soldo-business-api-v20-openapi-original.json#PUT /business/v2/transactions/{transactionId}

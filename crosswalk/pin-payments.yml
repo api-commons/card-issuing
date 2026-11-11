@@ -1,0 +1,16 @@
+provider: pin-payments
+apis_io: https://apis.io/providers/pin-payments/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      name: name
+      exp_month: expiry_month
+      exp_year: expiry_year
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/pin-payments-openapi.yaml#GET /cards/{card_token}
+    - openapi/_original/pin-payments-openapi.yaml#POST /cards

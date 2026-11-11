@@ -1,0 +1,35 @@
+provider: interswitch
+apis_io: https://apis.io/providers/interswitch/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      type: cardType
+      created_at: createdAt
+      cardholder_id: customerId
+      card_id: cardId
+      exp_month: expiryMonth
+      exp_year: expiryYear
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/interswitch-card-360-api-openapi.yml#GET /card-360/api/v1/cards/{cardId}
+    - openapi/_original/interswitch-card-360-api-openapi.yml#POST /card-360/api/v1/cards
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      status: status
+      created_at: createdAt
+      type: type
+      currency: currency
+      settled_at: settlementDate
+      transaction_id: transactionId
+      cardholder_id: customerId
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/interswitch-transaction-search-api-openapi.yml#GET /transaction-search/api/v1/transactions/{transactionId}

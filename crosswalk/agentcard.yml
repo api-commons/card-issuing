@@ -1,0 +1,23 @@
+provider: agentcard
+apis_io: https://apis.io/providers/agentcard/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: last4
+      created_at: created_at
+      expires_at:
+      - expiry
+      - expires_at
+      currency: currency
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/agentcard-openapi.json#GET /api/v2/cards
+    - openapi/_original/agentcard-openapi.json#GET /api/v2/cards/{card_id}
+    - openapi/_original/agentcard-openapi.json#POST /api/v2/cards

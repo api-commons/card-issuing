@@ -1,0 +1,1131 @@
+context: card-issuing
+name: Card Issuing
+generated: '2026-11-10'
+version: 0.1.0-draft.20261110
+status: draft
+cohort:
+  tags:
+  - Card Issuing
+  - Issuing
+  - Payments
+  - Corporate Cards
+  - Virtual Cards
+  - Prepaid Cards
+  - Debit Cards
+  - Commercial Cards
+  - Fuel Cards
+  - Spend Management
+  - Expense Management
+  - Banking as a Service
+  - BaaS
+  - Embedded Finance
+  - Neobank
+  providers_with_harvested_openapi: 740
+thresholds:
+  core: 0.5
+  extended: 0.2
+  min_providers: 3
+excluded:
+  card:
+    goody: /cards are greeting cards
+    scvd-store: /card is a collectible-card listing
+    lightspeed: /id-cards are staff ID badges
+    execution-market: /card is a profile card
+    booking-com: /payments/cards are a guest's saved cards
+    mastercard: /cards is the card-number update service (account updater)
+    korapay: /charges/card charges a card
+    razorpay: /payments/{id}/card is the card used on a payment
+    toss-payments: /billing/authorizations/card registers a billing card
+    processout: /cards tokenizes a card for payment
+    tabapay: /cards stores a card for push-to-card payouts
+    payabli: /MoneyOutCard pays out to a card
+    coinflow: /customer/card is a customer's saved card
+    culqi: /cards are saved cards (tokens for charges)
+    layup-technologies: /cards are saved cards for debit orders
+    plug: /cards are saved cards for charges
+    six-group: Click to Pay card enrolment
+    evervault: /payments/cards are vaulted cards for payment
+    chargebee: /cards are subscription billing cards
+    openpay: /{merchant}/cards are saved cards
+    helcim: saved cards
+    interchecks: payee accounts, not issued cards
+    verifone: /card is a card-on-file token
+    lemonway: /moneyins/card is a pay-in card
+    mangopay: /cards are registered pay-in cards
+    affirm: a single-use virtual card minted for one checkout is a payment instrument, not an issuing programme
+duplicates:
+  finix:
+  - finix-payments
+  mesh:
+  - mesh-connect
+  orbii:
+  - orbii-tech-ltd
+shared_specs: {}
+concepts:
+  card:
+    segments_seen:
+      cards: 53
+      card: 15
+      physical_cards: 1
+      physical-cards: 1
+      virtual-cards: 1
+    providers_exposing: 64
+    providers_with_readable_schema: 59
+    operations:
+    - operation: GET collection
+      providers: 52
+      share: 0.812
+      tier: core
+    - operation: GET item
+      providers: 49
+      share: 0.766
+      tier: core
+    - operation: POST collection
+      providers: 45
+      share: 0.703
+      tier: core
+    - operation: UPDATE item
+      providers: 26
+      share: 0.406
+      tier: extended
+    - operation: DELETE item
+      providers: 15
+      share: 0.234
+      tier: extended
+    - operation: POST item
+      providers: 5
+      share: 0.078
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.016
+      tier: long-tail
+    properties:
+    - name: status
+      tier: core
+      providers: 44
+      share: 0.746
+      type: string
+      spellings:
+      - status
+      - state
+      - cardStatus
+      - card_status
+    - name: id
+      tier: core
+      providers: 40
+      share: 0.678
+      type: string
+      spellings:
+      - id
+      - token
+      - Id
+      - uuid
+    - name: last4
+      tier: core
+      providers: 35
+      share: 0.593
+      type: string
+      spellings:
+      - last4
+      - last_four
+      - maskedPan
+      - last_4
+      - last_four_digits
+      - lastFour
+      - lastFourDigits
+      - masked_pan
+    - name: type
+      tier: core
+      providers: 35
+      share: 0.593
+      type: string
+      spellings:
+      - type
+      - cardType
+      - card_type
+      - formFactor
+      - form
+    - name: created_at
+      tier: extended
+      providers: 29
+      share: 0.492
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - createdOn
+      - createdDate
+      - date_created
+      - created_time
+    - name: expires_at
+      tier: extended
+      providers: 24
+      share: 0.407
+      type: string
+      spellings:
+      - expiry
+      - expiryDate
+      - expiration
+      - expirationDate
+      - expiration_date
+      - expiry_date
+      - expiration_time
+      - expires_at
+    - name: cardholder_id
+      tier: extended
+      providers: 23
+      share: 0.39
+      type: string
+      spellings:
+      - customer_id
+      - customerId
+      - user_id
+      - cardholderId
+      - cardholder
+      - userToken
+      - userId
+      - ownerId
+    - name: name
+      tier: extended
+      providers: 22
+      share: 0.373
+      type: string
+      spellings:
+      - name
+      - label
+      - nameOnCard
+      - card_name
+      - name_on_card
+      - cardName
+      - nickname
+      - embossedName
+    - name: card_id
+      tier: extended
+      providers: 16
+      share: 0.271
+      type: string
+      spellings:
+      - cardId
+      - card
+      - cardToken
+      - card_id
+      - cardID
+      - card_token
+    - name: brand
+      tier: extended
+      providers: 14
+      share: 0.237
+      type: string
+      spellings:
+      - brand
+      - network
+      - card_brand
+      - card_network
+    - name: currency
+      tier: extended
+      providers: 14
+      share: 0.237
+      type: string
+      spellings:
+      - currency
+      - currency_code
+      - currencyCode
+    - name: metadata
+      tier: extended
+      providers: 14
+      share: 0.237
+      type: object
+      spellings:
+      - metadata
+      - custom_fields
+      - customFields
+      - attributes
+    - name: account_id
+      tier: extended
+      providers: 13
+      share: 0.22
+      type: string
+      spellings:
+      - account_id
+      - accountId
+      - wallet_id
+      - account_token
+    - name: exp_month
+      tier: extended
+      providers: 13
+      share: 0.22
+      type: integer
+      spellings:
+      - expiryMonth
+      - exp_month
+      - expiration_month
+      - expMonth
+      - expiry_month
+    - name: exp_year
+      tier: extended
+      providers: 13
+      share: 0.22
+      type: integer
+      spellings:
+      - expiryYear
+      - exp_year
+      - expiration_year
+      - expYear
+      - expiry_year
+    - name: updated_at
+      tier: extended
+      providers: 12
+      share: 0.203
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - updated
+      - last_modified_time
+      - updated_time
+    long_tail_count: 539
+    long_tail_sample:
+    - shipping
+    - billing_address
+    - program_id
+    - cvv
+    - description
+    - pan
+    - cards
+    - spending_controls
+    - number
+    - bin
+    - card_number
+    - product
+    - account_number
+    - card_scheme
+    - creation_time
+    - reason
+    - status_reason
+    - cardholder_name
+    - country
+    - external_id
+    - fingerprint
+    - idempotency_key
+    - is_physical
+    - items
+    - limit
+    - payment_method_id
+    - printed_name
+    - user
+    - activated_at
+    - active
+    - add_card_assignees
+    - address
+    - address_id
+    - agent_id
+    - allowance
+    - amount
+    - assigned_to
+    - assignees
+    - authentication
+    - billing_name
+  cardholder:
+    segments_seen:
+      users: 15
+      employees: 6
+      user: 6
+      cardholder: 3
+      cardholders: 2
+      account_holders: 1
+    providers_exposing: 28
+    providers_with_readable_schema: 27
+    operations:
+    - operation: GET collection
+      providers: 23
+      share: 0.821
+      tier: core
+    - operation: GET item
+      providers: 21
+      share: 0.75
+      tier: core
+    - operation: POST collection
+      providers: 13
+      share: 0.464
+      tier: extended
+    - operation: UPDATE item
+      providers: 13
+      share: 0.464
+      tier: extended
+    - operation: DELETE item
+      providers: 4
+      share: 0.143
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 3
+      share: 0.107
+      tier: long-tail
+    - operation: POST item
+      providers: 2
+      share: 0.071
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.036
+      tier: long-tail
+    properties:
+    - name: email
+      tier: core
+      providers: 24
+      share: 0.889
+      type: string
+      spellings:
+      - email
+    - name: last_name
+      tier: core
+      providers: 20
+      share: 0.741
+      type: string
+      spellings:
+      - lastName
+      - last_name
+      - surname
+    - name: id
+      tier: core
+      providers: 18
+      share: 0.667
+      type: string
+      spellings:
+      - id
+      - token
+      - uuid
+    - name: first_name
+      tier: core
+      providers: 17
+      share: 0.63
+      type: string
+      spellings:
+      - firstName
+      - first_name
+    - name: phone
+      tier: core
+      providers: 16
+      share: 0.593
+      type: string
+      spellings:
+      - phone
+      - phone_number
+      - phoneNumber
+      - mobile
+      - mobilePhone
+    - name: status
+      tier: extended
+      providers: 11
+      share: 0.407
+      type: string
+      spellings:
+      - status
+      - state
+    - name: created_at
+      tier: extended
+      providers: 10
+      share: 0.37
+      type: string
+      spellings:
+      - createdAt
+      - created_at
+      - created
+      - created_time
+    - name: billing_address
+      tier: extended
+      providers: 9
+      share: 0.333
+      type: object
+      spellings:
+      - address
+      - addresses
+      - billing
+    - name: date_of_birth
+      tier: extended
+      providers: 8
+      share: 0.296
+      type: string
+      spellings:
+      - birthDate
+      - dob
+      - dateOfBirth
+      - birth_date
+      - birthdate
+    - name: cardholder_id
+      tier: extended
+      providers: 7
+      share: 0.259
+      type: string
+      spellings:
+      - userId
+      - customerId
+      - employeeId
+      - user_token
+      - userToken
+    - name: name
+      tier: extended
+      providers: 6
+      share: 0.222
+      type: string
+      spellings:
+      - name
+      - fullName
+    - name: updated_at
+      tier: extended
+      providers: 6
+      share: 0.222
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - last_modified_time
+    long_tail_count: 498
+    long_tail_sample:
+    - metadata
+    - nationality
+    - country
+    - role
+    - roles
+    - active
+    - avatar_url
+    - birth_place
+    - city
+    - company
+    - gender
+    - groups
+    - middle_name
+    - title
+    - type
+    - account_number
+    - account_type
+    - contact_id
+    - creation_time
+    - custom_reference_id
+    - department
+    - department_id
+    - employee
+    - enable_mobile_credential
+    - enable_web_credential
+    - is_active
+    - is_owner
+    - is_suspended
+    - items
+    - job_title
+    - last_update
+    - legal_entity_id
+    - locale
+    - location_id
+    - location_ids
+    - manager_id
+    - marital_status
+    - middlename
+    - mobile_access
+    - mobile_number
+  authorization:
+    segments_seen:
+      authorizations: 9
+      authorization: 6
+      authorisations: 3
+      authorisation: 1
+    providers_exposing: 16
+    providers_with_readable_schema: 16
+    operations:
+    - operation: POST collection
+      providers: 12
+      share: 0.75
+      tier: core
+    - operation: GET collection
+      providers: 8
+      share: 0.5
+      tier: core
+    - operation: GET item
+      providers: 7
+      share: 0.438
+      tier: extended
+    - operation: UPDATE item
+      providers: 2
+      share: 0.125
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.062
+      tier: long-tail
+    - operation: DELETE item
+      providers: 1
+      share: 0.062
+      tier: long-tail
+    - operation: POST item
+      providers: 1
+      share: 0.062
+      tier: long-tail
+    properties:
+    - name: amount
+      tier: core
+      providers: 12
+      share: 0.75
+      type: number
+      spellings:
+      - amount
+      - amount_in_cents
+      - total_amount
+      - transactionAmount
+      - billingAmount
+      - totalAmount
+    - name: id
+      tier: core
+      providers: 8
+      share: 0.5
+      type: string
+      spellings:
+      - id
+      - authorizationId
+      - authorizationID
+      - authorization_id
+      - token
+    - name: merchant
+      tier: core
+      providers: 8
+      share: 0.5
+      type: object
+      spellings:
+      - merchant_name
+      - card_acceptor
+      - merchantName
+      - merchant
+      - merchantData
+      - merchant_data
+    - name: card_id
+      tier: extended
+      providers: 7
+      share: 0.438
+      type: string
+      spellings:
+      - card_id
+      - cardToken
+      - card_token
+      - cardId
+      - card
+    - name: currency
+      tier: extended
+      providers: 7
+      share: 0.438
+      type: string
+      spellings:
+      - currency
+      - currency_code
+    - name: status
+      tier: extended
+      providers: 7
+      share: 0.438
+      type: string
+      spellings:
+      - status
+    - name: merchant_category_code
+      tier: extended
+      providers: 6
+      share: 0.375
+      type: string
+      spellings:
+      - mcc
+      - merchantCategoryCode
+    - name: created_at
+      tier: extended
+      providers: 4
+      share: 0.25
+      type: string
+      spellings:
+      - date_created
+      - createdAt
+      - createdOn
+      - created
+    long_tail_count: 203
+    long_tail_sample:
+    - cash_back_amount
+    - mid
+    - transaction_type
+    - account_id
+    - approval_code
+    - approved
+    - authorisation_id
+    - card_number
+    - card_options
+    - cardholder_id
+    - decline_reason
+    - is_pre_auth
+    - merchant_id
+    - metadata
+    - network_fees
+    - pin
+    - transaction_options
+    - account_identifier
+    - account_mask
+    - account_name
+    - acquiring_institution_identification_code
+    - activation
+    - activation_tx_id
+    - amount_authorized
+    - amount_details
+    - approved_amount
+    - approved_at
+    - approved_count
+    - auth_code
+    - authentication_method_id
+    - authorisation_ids
+    - authorisations_ids
+    - authorization_business_case_identifier
+    - authorization_count
+    - authorization_date_time
+    - authorization_identifier
+    - authorization_method
+    - authorized_amount
+    - balance_transactions
+    - billing_currency
+  card_transaction:
+    segments_seen:
+      transactions: 45
+      transaction: 10
+    providers_exposing: 47
+    providers_with_readable_schema: 44
+    operations:
+    - operation: GET collection
+      providers: 44
+      share: 0.936
+      tier: core
+    - operation: GET item
+      providers: 35
+      share: 0.745
+      tier: core
+    - operation: UPDATE item
+      providers: 10
+      share: 0.213
+      tier: extended
+    - operation: POST collection
+      providers: 8
+      share: 0.17
+      tier: long-tail
+    - operation: DELETE item
+      providers: 3
+      share: 0.064
+      tier: long-tail
+    - operation: POST item
+      providers: 2
+      share: 0.043
+      tier: long-tail
+    properties:
+    - name: amount
+      tier: core
+      providers: 30
+      share: 0.682
+      type: number
+      spellings:
+      - amount
+      - amountCents
+      - billingAmount
+      - totalAmount
+      - amountValue
+      - Amount
+    - name: id
+      tier: core
+      providers: 30
+      share: 0.682
+      type: string
+      spellings:
+      - id
+      - token
+      - uuid
+      - cardTransactionId
+    - name: status
+      tier: core
+      providers: 27
+      share: 0.614
+      type: string
+      spellings:
+      - status
+      - state
+    - name: merchant
+      tier: core
+      providers: 26
+      share: 0.591
+      type: string
+      spellings:
+      - description
+      - merchant
+      - merchantName
+      - merchantData
+      - merchant_name
+      - card_acceptor
+      - merchant_data
+      - MerchantName
+    - name: created_at
+      tier: core
+      providers: 24
+      share: 0.545
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - created_time
+      - creationDate
+      - createdOn
+      - createdDate
+    - name: type
+      tier: core
+      providers: 22
+      share: 0.5
+      type: string
+      spellings:
+      - type
+      - transactionType
+      - transaction_type
+    - name: card_id
+      tier: extended
+      providers: 18
+      share: 0.409
+      type: string
+      spellings:
+      - card
+      - cardId
+      - card_id
+      - card_token
+      - cardToken
+    - name: currency
+      tier: extended
+      providers: 17
+      share: 0.386
+      type: string
+      spellings:
+      - currency
+      - currency_code
+      - Currency
+    - name: settled_at
+      tier: extended
+      providers: 12
+      share: 0.273
+      type: string
+      spellings:
+      - settlement_date
+      - posted_at
+      - settlementDate
+      - settledAt
+      - postedAt
+      - postedDate
+      - settled_at
+    - name: transaction_id
+      tier: extended
+      providers: 12
+      share: 0.273
+      type: string
+      spellings:
+      - transactionId
+      - transaction_id
+      - transactionID
+      - TransactionID
+    - name: updated_at
+      tier: extended
+      providers: 12
+      share: 0.273
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - update_time
+      - updated_time
+      - last_modified_time
+      - updated
+      - LastModified
+    - name: cardholder_id
+      tier: extended
+      providers: 9
+      share: 0.205
+      type: string
+      spellings:
+      - customerId
+      - owner_id
+      - customer_id
+      - user_token
+      - user_id
+      - cardholder
+    long_tail_count: 751
+    long_tail_sample:
+    - account_id
+    - metadata
+    - date
+    - category
+    - memo
+    - merchant_category_code
+    - order_id
+    - source
+    - payment_method
+    - approval_code
+    - exchange_rate
+    - fees
+    - masked_pan
+    - note
+    - notes
+    - response_code
+    - transaction_amount
+    - transaction_date
+    - wallet_id
+    - authorized_at
+    - content
+    - decline_reason
+    - details
+    - event_date
+    - external_id
+    - fee
+    - fee_amount
+    - has_attachments
+    - location
+    - location_id
+    - merchant_id
+    - purchase_details
+    - reference_number
+    - terminal_id
+    - account
+    - account_number
+    - account_subtype
+    - ach_info
+    - acquirer_reference_data
+    - amount_currency
+  spending_control:
+    segments_seen:
+      limits: 6
+      spend_limits: 1
+      velocitycontrols: 1
+      authcontrols: 1
+    providers_exposing: 8
+    providers_with_readable_schema: 8
+    operations:
+    - operation: GET collection
+      providers: 7
+      share: 0.875
+      tier: core
+    - operation: POST collection
+      providers: 3
+      share: 0.375
+      tier: extended
+    - operation: DELETE item
+      providers: 1
+      share: 0.125
+      tier: long-tail
+    - operation: GET item
+      providers: 1
+      share: 0.125
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.125
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 1
+      share: 0.125
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 4
+      share: 0.5
+      type: string
+      spellings:
+      - token
+      - id
+    - name: limit
+      tier: extended
+      providers: 3
+      share: 0.375
+      type: integer
+      spellings:
+      - amount
+      - usage_limit
+    long_tail_count: 44
+    long_tail_sample:
+    - currency
+    - status
+    - account_number
+    - active
+    - amount_from
+    - amount_limit
+    - amount_to
+    - approvals_only
+    - association
+    - atm_limit
+    - available_cash
+    - available_credit
+    - can_user_request_limit_increase
+    - card_id
+    - cash_limit
+    - categories
+    - cqrs_version
+    - created_at
+    - credit_limit
+    - currency_to
+    - domestic
+    - end_time
+    - has_atm_limit_increased_today
+    - has_pos_limit_increased_today
+    - include_cashback
+    - include_credits
+    - include_purchases
+    - include_transfers
+    - include_withdrawals
+    - international
+    - interval
+    - metadata
+    - money_in_transaction
+    - name
+    - pos_limit
+    - principal
+    - rate_type
+    - relationships
+    - rest
+    - start_time
+  card_program:
+    segments_seen:
+      products: 8
+      programs: 3
+      card_programs: 1
+      cardproducts: 1
+    providers_exposing: 12
+    providers_with_readable_schema: 12
+    operations:
+    - operation: GET collection
+      providers: 12
+      share: 1.0
+      tier: core
+    - operation: GET item
+      providers: 10
+      share: 0.833
+      tier: core
+    - operation: POST collection
+      providers: 7
+      share: 0.583
+      tier: core
+    - operation: UPDATE item
+      providers: 6
+      share: 0.5
+      tier: core
+    - operation: DELETE item
+      providers: 3
+      share: 0.25
+      tier: extended
+    properties:
+    - name: created_at
+      tier: core
+      providers: 9
+      share: 0.75
+      type: string
+      spellings:
+      - created_at
+      - created
+      - createdAt
+      - created_time
+      - createdOn
+      - date_created
+    - name: id
+      tier: core
+      providers: 9
+      share: 0.75
+      type: string
+      spellings:
+      - id
+      - token
+      - card_program_id
+    - name: name
+      tier: core
+      providers: 8
+      share: 0.667
+      type: string
+      spellings:
+      - name
+      - title
+    - name: updated_at
+      tier: core
+      providers: 6
+      share: 0.5
+      type: string
+      spellings:
+      - updated_at
+      - last_modified_time
+      - updatedAt
+      - updated_time
+    - name: description
+      tier: extended
+      providers: 5
+      share: 0.417
+      type: string
+      spellings:
+      - description
+    - name: active
+      tier: extended
+      providers: 4
+      share: 0.333
+      type: boolean
+      spellings:
+      - active
+    - name: currency
+      tier: extended
+      providers: 3
+      share: 0.25
+      type: string
+      spellings:
+      - currency
+      - currency_code
+    - name: images
+      tier: extended
+      providers: 3
+      share: 0.25
+      type: array
+      spellings:
+      - images
+    - name: status
+      tier: extended
+      providers: 3
+      share: 0.25
+      type: string
+      spellings:
+      - status
+    long_tail_count: 102
+    long_tail_sample:
+    - accrual_rules
+    - end_date
+    - expiration_policy
+    - location_ids
+    - metadata
+    - price
+    - product_type
+    - reward_tiers
+    - start_date
+    - terminology
+    - type
+    - accrual_payout_schedule
+    - available
+    - bank
+    - base_price
+    - billing_account_id
+    - billing_recurrence
+    - body
+    - bundle
+    - bundle_items
+    - calculation_method
+    - cancel_url
+    - card_product_tokens
+    - categories
+    - category_id
+    - classification
+    - color
+    - config
+    - creation_time
+    - credit_line
+    - cross_sells
+    - current_prices_per_metric_ton
+    - custom_properties
+    - date_updated
+    - default_avatax_code
+    - default_digital_card_profile_id
+    - default_ledger_account_id
+    - default_tax_id
+    - delivery
+    - delivery_year

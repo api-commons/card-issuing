@@ -1,0 +1,42 @@
+provider: falcon
+apis_io: https://apis.io/providers/falcon/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      type: formFactor
+      expires_at: expiry
+      card_id: cardId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/falcon-credit-card-apis-openapi.yml#GET /card
+    - openapi/_original/falcon-credit-card-apis-openapi.yml#POST /account/{accountId}/card
+    - openapi/_original/falcon-credit-card-apis-openapi.yml#POST /card/{cardId}
+    - openapi/_original/falcon-credit-card-apis-openapi.yml#POST /cc-open-api/falcon/v1/card/{cardId}
+    - openapi/_original/falcon-credit-card-apis-openapi.yml#POST /cc-open-api/falcon/v2/card/{cardID}
+  cardholder:
+    path_segment:
+    - user
+    - users
+    properties:
+      email: email
+      status: status
+      billing_address: address
+      cardholder_id: userId
+    core_coverage: 0.2
+    evidence:
+    - openapi/_original/falcon-add-a-user-openapi.yml#POST /user
+    - openapi/_original/falcon-confirm-the-user-registration-openapi.yml#POST /user
+    - openapi/_original/falcon-credit-card-account-apis-openapi.yml#GET /account/users
+    - openapi/_original/falcon-initiate-a-user-registration-openapi.yml#POST /user
+    - openapi/_original/falcon-update-user-details-openapi.yml#PUT /user/{userId}
+  spending_control:
+    path_segment:
+    - limits
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/falcon-credit-card-apis-openapi.yml#GET /card/{cardId}/policies/limits

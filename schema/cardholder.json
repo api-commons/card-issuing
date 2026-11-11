@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/cardholder.json",
+  "title": "Cardholder",
+  "description": "The common cardholder in Card Issuing, distilled from 27 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.889,
+      "x-commons-providers": 24,
+      "x-commons-spellings": [
+        "email"
+      ],
+      "format": "email"
+    },
+    "last_name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.741,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "lastName",
+        "last_name",
+        "surname"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.667,
+      "x-commons-providers": 18,
+      "x-commons-spellings": [
+        "id",
+        "token",
+        "uuid"
+      ]
+    },
+    "first_name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.63,
+      "x-commons-providers": 17,
+      "x-commons-spellings": [
+        "firstName",
+        "first_name"
+      ]
+    },
+    "phone": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.593,
+      "x-commons-providers": 16,
+      "x-commons-spellings": [
+        "phone",
+        "phone_number",
+        "phoneNumber",
+        "mobile",
+        "mobilePhone"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.407,
+      "x-commons-providers": 11,
+      "x-commons-spellings": [
+        "status",
+        "state"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.37,
+      "x-commons-providers": 10,
+      "x-commons-spellings": [
+        "createdAt",
+        "created_at",
+        "created",
+        "created_time"
+      ],
+      "format": "date-time"
+    },
+    "billing_address": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.333,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "address",
+        "addresses",
+        "billing"
+      ]
+    },
+    "date_of_birth": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.296,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "birthDate",
+        "dob",
+        "dateOfBirth",
+        "birth_date",
+        "birthdate"
+      ]
+    },
+    "cardholder_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.259,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "userId",
+        "customerId",
+        "employeeId",
+        "user_token",
+        "userToken"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.222,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "name",
+        "fullName"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.222,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "last_modified_time"
+      ],
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "card-issuing",
+    "concept": "cardholder",
+    "providers": 27,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

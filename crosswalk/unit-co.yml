@@ -1,0 +1,47 @@
+provider: unit-co
+apis_io: https://apis.io/providers/unit-co/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      type: type
+      metadata: attributes
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#GET /cards
+    - openapi/_original/unit-co-openapi.yml#GET /cards/{cardId}
+    - openapi/_original/unit-co-openapi.yml#PATCH /cards/{cardId}
+    - openapi/_original/unit-co-openapi.yml#POST /cards
+  authorization:
+    path_segment:
+    - authorizations
+    properties:
+      id: id
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#GET /authorizations
+    - openapi/_original/unit-co-openapi.yml#GET /authorizations/{authorizationId}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: id
+      type: type
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#GET /accounts/{accountId}/transactions/{transactionId}
+    - openapi/_original/unit-co-openapi.yml#GET /transactions
+    - openapi/_original/unit-co-openapi.yml#PATCH /accounts/{accountId}/transactions/{transactionId}
+  spending_control:
+    path_segment:
+    - limits
+    properties:
+      id: id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#GET /accounts/{accountId}/limits
+    - openapi/_original/unit-co-openapi.yml#GET /cards/{cardId}/limits

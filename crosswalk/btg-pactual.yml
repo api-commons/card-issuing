@@ -1,0 +1,59 @@
+provider: btg-pactual
+apis_io: https://apis.io/providers/btg-pactual/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      type: type
+      card_id: cardId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/btg-pactual-banking-cards-openapi.yml#GET /{companyId}/banking/cards
+  cardholder:
+    path_segment:
+    - employees
+    properties:
+      email: email
+      phone: phone
+      status: status
+      billing_address: address
+      cardholder_id: employeeId
+      name: name
+    core_coverage: 0.4
+    evidence:
+    - openapi/_original/btg-pactual-banking-payroll-openapi.yml#GET /{companyId}/banking/payroll/employees
+    - openapi/_original/btg-pactual-banking-payroll-openapi.yml#GET /{companyId}/banking/payroll/employees/{employeeTaxId}
+    - openapi/_original/btg-pactual-banking-payroll-openapi.yml#POST /{companyId}/banking/payroll/onboarding/employees
+  authorization:
+    path_segment:
+    - authorization
+    properties:
+      amount: amount
+      id:
+      - authorizationId
+      - id
+      status: status
+      created_at: createdAt
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/btg-pactual-banking-pix-automatico-openapi.yml#DELETE /{companyId}/banking/collections/automatic-pix/authorization/{authorizationId}
+    - openapi/_original/btg-pactual-banking-pix-automatico-openapi.yml#GET /{companyId}/banking/collections/automatic-pix/authorization
+    - openapi/_original/btg-pactual-banking-pix-automatico-openapi.yml#PATCH /{companyId}/banking/collections/automatic-pix/authorization/{authorizationId}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      merchant: merchant
+      created_at: createdAt
+      type: transactionType
+      card_id: card
+      cardholder_id: customerId
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/btg-pactual-banking-cards-openapi.yml#GET /{companyId}/banking/cards/invoices/{invoiceId}/transactions

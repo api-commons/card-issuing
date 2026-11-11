@@ -1,0 +1,98 @@
+provider: stripe
+apis_io: https://apis.io/providers/stripe/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: last4
+      type: type
+      created_at: created
+      cardholder_id: cardholder
+      brand: brand
+      currency: currency
+      metadata: metadata
+      exp_month: exp_month
+      exp_year: exp_year
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/cards
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/cards/{card}
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/cards
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/cards/{card}
+  cardholder:
+    path_segment:
+    - cardholders
+    properties:
+      email: email
+      id: id
+      phone: phone_number
+      status: status
+      created_at: created
+      billing_address: billing
+      name: name
+    core_coverage: 0.6
+    evidence:
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/cardholders
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/cardholders/{cardholder}
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/cardholders
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/cardholders/{cardholder}
+  authorization:
+    path_segment:
+    - authorizations
+    properties:
+      amount: amount
+      id:
+      - id
+      - token
+      merchant: merchant_data
+      card_id: card
+      currency: currency
+      status: status
+      created_at: created
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/authorizations
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/authorizations/{authorization}
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/authorizations/{authorization}
+    - openapi/_original/test-helpers-openapi-original.yml#POST /v1/test_helpers/issuing/authorizations
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id:
+      - id
+      - token
+      status: status
+      merchant:
+      - description
+      - merchant_data
+      created_at: created
+      type: type
+      card_id: card
+      currency: currency
+      updated_at: updated
+      cardholder_id: cardholder
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/financial-connections-openapi-original.yml#GET /v1/financial_connections/transactions
+    - openapi/_original/financial-connections-openapi-original.yml#GET /v1/financial_connections/transactions/{transaction}
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/transactions
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/transactions/{transaction}
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/transactions/{transaction}
+  card_program:
+    path_segment:
+    - products
+    properties:
+      created_at: created
+      id: id
+      name: name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/climate-openapi-original.yml#GET /v1/climate/products
+    - openapi/_original/climate-openapi-original.yml#GET /v1/climate/products/{product}

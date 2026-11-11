@@ -1,0 +1,55 @@
+provider: bond
+apis_io: https://apis.io/providers/bond/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      last4: last_four
+      created_at: date_created
+      expires_at: expiry_date
+      cardholder_id: customer_id
+      card_id: card_id
+      account_id: account_id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bond-cards-openapi.yml#GET /cards
+    - openapi/_original/bond-cards-openapi.yml#GET /cards/{card_id}
+    - openapi/_original/bond-cards-openapi.yml#PATCH /cards/{card_id}
+    - openapi/_original/bond-cards-openapi.yml#POST /cards
+  authorization:
+    path_segment:
+    - authorization
+    properties:
+      amount:
+      - amount
+      - amount_in_cents
+      merchant: merchant_name
+      card_id: card_id
+      currency:
+      - currency_code
+      - currency
+      merchant_category_code: mcc
+      created_at: date_created
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/bond-simulation-openapi.yml#POST /simulate/authorization
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      status: state
+      created_at: created_time
+      type: transaction_type
+      currency: currency
+      transaction_id: transaction_id
+      updated_at: updated_time
+      cardholder_id: customer_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/bond-ledger-openapi.yml#GET /transactions
+    - openapi/_original/bond-ledger-openapi.yml#GET /transactions/{transaction_id}

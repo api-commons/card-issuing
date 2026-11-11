@@ -1,0 +1,41 @@
+provider: total-system-services
+apis_io: https://apis.io/providers/total-system-services/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      last4: lastFour
+      type: type
+      expires_at: expirationDate
+      brand: network
+      account_id: accountId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tsys-issuing-openapi.yml#GET /accounts/{accountId}/cards
+    - openapi/_original/tsys-issuing-openapi.yml#GET /cards/{cardId}
+    - openapi/_original/tsys-issuing-openapi.yml#POST /accounts/{accountId}/cards
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      status: status
+      merchant: merchantName
+      created_at: createdAt
+      type: type
+      card_id: cardId
+      currency: currency
+      settled_at:
+      - postedAt
+      - settledAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tsys-issuing-openapi.yml#GET /cards/{cardId}/transactions
+    - openapi/_original/tsys-payment-gateway-openapi.yml#GET /transactions
+    - openapi/_original/tsys-payment-gateway-openapi.yml#GET /transactions/{transactionId}

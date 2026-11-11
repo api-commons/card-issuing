@@ -1,0 +1,73 @@
+provider: moov
+apis_io: https://apis.io/providers/moov/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: state
+      type:
+      - cardType
+      - formFactor
+      created_at: createdOn
+      expires_at: expiration
+      name: nickname
+      card_id: cardID
+      brand: brand
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/moov-api-openapi.yml#DELETE /accounts/{accountID}/cards/{cardID}
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/cards
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/cards/{cardID}
+    - openapi/_original/moov-api-openapi.yml#PATCH /accounts/{accountID}/cards/{cardID}
+    - openapi/_original/moov-api-openapi.yml#POST /accounts/{accountID}/cards
+  authorization:
+    path_segment:
+    - authorizations
+    properties:
+      id: authorizationID
+      merchant: merchantData
+      status: status
+      created_at: createdOn
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /issuing/{accountID}/authorizations
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /issuing/{accountID}/authorizations/{authorizationID}
+    - openapi/_original/moov-openapi.yml#GET /issuing/{accountID}/authorizations
+    - openapi/_original/moov-openapi.yml#GET /issuing/{accountID}/authorizations/{authorizationID}
+    - openapi/_original/moov-openapi_2.yml#GET /issuing/{accountID}/authorizations
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      status: status
+      created_at: createdOn
+      type: transactionType
+      currency: currency
+      transaction_id: transactionID
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/wallets/{walletID}/transactions
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/wallets/{walletID}/transactions/{transactionID}
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/wallets/{walletID}/transactions
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/wallets/{walletID}/transactions/{transactionID}
+    - openapi/_original/moov-openapi.yml#GET /accounts/{accountID}/wallets/{walletID}/transactions
+  card_program:
+    path_segment:
+    - products
+    properties:
+      created_at: createdOn
+      name: title
+      description: description
+      images: images
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#DELETE /accounts/{accountID}/products/{productID}
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/products
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/products/{productID}
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#POST /accounts/{accountID}/products
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#PUT /accounts/{accountID}/products/{productID}

@@ -1,0 +1,45 @@
+provider: modulr
+apis_io: https://apis.io/providers/modulr/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    - physical-cards
+    properties:
+      status: status
+      id: id
+      last4: maskedPan
+      type: cardType
+      created_at: createdDate
+      expires_at: expiry
+      currency: currency
+      metadata: customFields
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/modulr-api.json#GET /accounts/{accountId}/cards
+    - openapi/_original/modulr-api.json#GET /cards
+    - openapi/_original/modulr-api.json#GET /cards/{cardId}
+    - openapi/_original/modulr-api.json#GET /channel-managers/cards
+    - openapi/_original/modulr-api.json#PATCH /cards/{cardId}
+  authorization:
+    path_segment:
+    - authorisations
+    properties:
+      amount:
+      - transactionAmount
+      - billingAmount
+      card_id: cardId
+      status: status
+      merchant_category_code: mcc
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/modulr-api.json#POST /cards/{cardId}/authorisations
+  card_transaction:
+    path_segment:
+    - transactions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/modulr-api.json#GET /accounts/{accountId}/transactions

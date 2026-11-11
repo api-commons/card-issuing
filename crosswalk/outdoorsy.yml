@@ -1,0 +1,73 @@
+provider: outdoorsy
+apis_io: https://apis.io/providers/outdoorsy/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      last4: last_four
+      created_at: created
+      cardholder_id: owner_id
+      brand: brand
+      exp_month: exp_month
+      exp_year: exp_year
+      updated_at: updated
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#DELETE /users/{user_id}/cards/{card_id}
+    - openapi/_original/outdoorsy-openapi-original.json#GET /users/{user_id}/cards
+    - openapi/_original/outdoorsy-openapi-original.json#PATCH /users/{user_id}/cards/{card_id}
+    - openapi/_original/outdoorsy-openapi-original.json#POST /users/{user_id}/cards
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: last_name
+      id: id
+      first_name: first_name
+      phone: phone
+      created_at: created
+      billing_address: address
+      date_of_birth: birthdate
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#GET /users
+    - openapi/_original/outdoorsy-openapi-original.json#GET /users/{id}
+    - openapi/_original/outdoorsy-openapi-original.json#PATCH /users/{id}
+    - openapi/_original/outdoorsy-search-openapi-original.json#GET /users
+    - openapi/_original/outdoorsy-search-openapi-original.json#GET /users/{id}
+  authorization:
+    path_segment:
+    - authorization
+    - authorizations
+    properties:
+      id: authorization_id
+      status: status
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#DELETE /users/authorization
+    - openapi/_original/outdoorsy-openapi-original.json#GET /users/authorization
+    - openapi/_original/outdoorsy-openapi-original.json#GET /users/authorizations
+    - openapi/_original/outdoorsy-openapi-original.json#POST /users/authorization
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      status: status
+      merchant: description
+      created_at: created
+      type: type
+      card_id: card_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#DELETE /bookings/{booking_id}/transactions/{transaction_id}
+    - openapi/_original/outdoorsy-openapi-original.json#GET /bookings/{booking_id}/transactions
+    - openapi/_original/outdoorsy-openapi-original.json#GET /bookings/{booking_id}/transactions/{transaction_id}
+    - openapi/_original/outdoorsy-openapi-original.json#GET /transactions
+    - openapi/_original/outdoorsy-openapi-original.json#PATCH /bookings/{booking_id}/transactions/{transaction_id}

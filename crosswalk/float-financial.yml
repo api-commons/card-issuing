@@ -1,0 +1,41 @@
+provider: float-financial
+apis_io: https://apis.io/providers/float-financial/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      last4: last_four_digits
+      type: type
+      created_at: created_at
+      cardholder_id: user_id
+      name: name
+      brand: card_network
+      currency: currency
+      metadata: custom_fields
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/float-financial-openapi.json#GET /v1/cards
+    - openapi/_original/float-financial-openapi.json#GET /v1/cards/{card_id}
+    - openapi/_original/float-financial-openapi.json#POST /v1/cards
+    - openapi/_original/float-financial-openapi.yml#GET /v1/cards
+    - openapi/_original/float-financial-openapi.yml#GET /v1/cards/{card_id}
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: last_name
+      id: id
+      first_name: first_name
+      created_at: created_at
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/float-financial-openapi.json#GET /v1/users
+    - openapi/_original/float-financial-openapi.json#GET /v1/users/{user_id}
+    - openapi/_original/float-financial-openapi.json#POST /v1/users
+    - openapi/_original/float-financial-openapi.yml#GET /v1/users
+    - openapi/_original/float-financial-openapi.yml#GET /v1/users/{user_id}

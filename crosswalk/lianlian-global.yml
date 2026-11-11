@@ -1,0 +1,54 @@
+provider: lianlian-global
+apis_io: https://apis.io/providers/lianlian-global/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    - cards
+    properties:
+      status: status
+      expires_at: expiryDate
+      name: cardName
+      card_id: cardId
+      currency: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/lianlian-global-cards-open-api-card-apis-openapi.yml#DELETE /gateway/vcc-api/card/{cardId}
+    - openapi/_original/lianlian-global-cards-open-api-card-apis-openapi.yml#GET /gateway/vcc-api/card/{cardId}
+    - openapi/_original/lianlian-global-cards-open-api-card-apis-openapi.yml#POST /gateway/vcc-api/card/{cardId}
+    - openapi/_original/lianlian-global-llp-api-userapi-wallet-openapi.yml#GET /supplier/v1/cards
+  cardholder:
+    path_segment:
+    - users
+    - user
+    properties:
+      email: email
+      last_name: lastName
+      id: id
+      first_name: firstName
+      date_of_birth: dateOfBirth
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/lianlian-global-triplink-openapi.yml#GET /users/{userId}
+    - openapi/_original/lianlian-global-triplink-openapi.yml#PATCH /users/{userId}
+    - openapi/_original/lianlian-global-triplink-openapi.yml#POST /user
+    - openapi/_original/lianlian-global-triplink-openapi.yml#POST /users/{userId}
+  card_transaction:
+    path_segment:
+    - transaction
+    - transactions
+    properties:
+      amount: amount
+      status: status
+      merchant: merchantName
+      currency: currency
+      transaction_id: transactionId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/lianlian-global-connect-account-openapi.yml#GET /v1/statement/transactions
+    - openapi/_original/lianlian-global-global-payout-fx-transaction-openapi.yml#GET /transaction/{transactionId}
+    - openapi/_original/lianlian-global-global-payout-fx-transaction-openapi.yml#POST /transaction
+    - openapi/_original/lianlian-global-global-payout-transaction-openapi.yml#GET /transaction/{transactionId}
+    - openapi/_original/lianlian-global-global-payout-transaction-openapi.yml#POST /transaction

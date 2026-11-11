@@ -1,0 +1,139 @@
+# The card issuing bounded context: issuing cards, the people who hold them, the
+# authorizations and transactions on them, and the controls on what they can spend. See
+# ../schema-commons for the method; the only judgement in this repo is in this file.
+#
+# Handed over from payments, where /cards and /tokens matched 104 providers whose cards
+# carry a cvv and a card number -- issued cards, not stored payment methods.
+#
+# Cohort: the Payments tag IS used -- it is where the payments context found the 104
+# providers with issued cards (Stripe Issuing among them). Every concept below except card
+# itself either has an issuing-specific segment or `requires: [card]`, so a payments
+# provider without cards contributes nothing here.
+#
+# Cohort decision: the bare "Cards" tag is NOT used (it also covers trading cards,
+# postcards, business cards and flashcards), nor "Gift Cards" or "Credit Cards" (largely
+# card-comparison and gift-card marketplaces).
+context: card-issuing
+name: Card Issuing
+tags: [Card Issuing, Issuing, Payments, Corporate Cards, Virtual Cards, Prepaid Cards, Debit Cards,
+       Commercial Cards, Fuel Cards, Spend Management, Expense Management, Banking as a Service,
+       BaaS, Embedded Finance, Neobank]
+
+envelope: [_links, _pagination, _results, data, success, errors, warnings, count, total, page, meta, links,
+           value, results, next, previous, has_more, message, status_code, ids, next_page, previous_page,
+           page_info, cursor, total_count, per_page, total_pages, current_page, object, url, livemode]
+
+common_fields:
+  id: [uuid, guid, object_id, record_id, token]
+  created_at: [created, created_date, created_time, date_created, create_time, creation_date, created_on]
+  updated_at: [updated, updated_date, modified_at, last_modified, date_modified, update_time, modified_date, updated_time, last_updated, last_modified_time]
+  metadata: [meta_data, custom_fields, custom, attributes, properties, additional_data, tags]
+  currency: [currency_code, currency_iso_code, iso_currency_code]
+  amount: [value, amount_value, total, total_amount, amount_in_cents, amount_cents, money, billing_amount]
+  status: [state, card_status, status_code]
+  cardholder_id: [cardholder, card_holder_id, user_id, user_token, employee_id, owner_id, holder_id, account_holder_id, customer_id, person_id]
+  card_id: [card, card_token]
+
+concepts:
+  card:
+    # Never a card saved on a customer or taken in a payment: that is a payment method
+    # (payments context). Issued cards hang off accounts, cardholders or nothing.
+    segments: ["cards!customers|customer|payers|payer|shoppers|buyers|payments|moneyins|charges|billing",
+               "card!customers|customer|payers|payer|shoppers|buyers|payments|moneyins|charges|billing",
+               virtual_cards, virtual-cards, physical_cards, physical-cards, payment_cards, debit_cards, prepaid_cards]
+    aliases:
+      last4: [last_four, last_4, last_four_digits, pan_last_four, masked_pan, card_last_four, last_digits]
+      exp_month: [expiry_month, expiration_month]
+      exp_year: [expiry_year, expiration_year]
+      expires_at: [expiration, expiry, expiration_date, expiry_date, expiration_time]
+      type: [card_type, form, form_factor, kind, physical]
+      brand: [network, card_network, scheme, card_brand]
+      program_id: [card_program_id, card_product_id, product_id, card_product_token, program]
+      account_id: [funding_account_id, funding_source_id, account, account_token, financial_account_id, wallet_id]
+      name: [nickname, display_name, label, card_name, name_on_card, embossed_name]
+      spending_controls: [spending_limits, limits, spend_limits, controls, velocity_controls, spend_controls]
+      shipping: [shipping_address, delivery_address, fulfillment]
+  cardholder:
+    # Issuers call cardholders users (Marqeta, Brex, Ramp); /users counts only at a provider
+    # that also issues cards.
+    requires: [card]
+    segments: [cardholders, cardholder, card_holders, card-holders, cardHolders, account_holders, account-holders, accountholders, users, user, employees]
+    aliases:
+      first_name: [firstname, given_name]
+      last_name: [lastname, surname, family_name]
+      name: [full_name, display_name]
+      email: [email_address, emails]
+      phone: [phone_number, mobile, mobile_phone]
+      billing_address: [address, billing, addresses]
+      date_of_birth: [dob, birth_date, birthdate]
+      type: [entity_type, holder_type, kind]
+  authorization:
+    requires: [card]
+    segments: [authorizations, authorisations, authorization, authorisation, auths]
+    aliases:
+      approved: [is_approved, decision, response, result, outcome]
+      merchant: [merchant_data, merchant_name, card_acceptor, merchant_details]
+      merchant_category_code: [mcc, merchant_category, category_code]
+      amount: [authorization_amount, auth_amount, requested_amount, transaction_amount]
+  card_transaction:
+    path: /transactions
+    # /transactions counts only at a provider that also issues cards (Ramp, Marqeta keep it
+    # top-level); a bank ledger without cards contributes nothing.
+    requires: [card]
+    segments: [transactions, transaction, card_transactions]
+    aliases:
+      merchant: [merchant_data, merchant_name, card_acceptor, merchant_details, description]
+      merchant_category_code: [mcc, merchant_category, category_code]
+      type: [transaction_type, kind]
+      authorization_id: [authorization, auth_id]
+      settled_at: [posted_at, settlement_date, posted_date, cleared_at]
+  spending_control:
+    requires: [card]
+    segments: [authcontrols, auth-controls, velocity-controls, limits, spending_controls, spending-controls, spend_controls, spend-controls, spending_limits, spend_limits, velocity_controls, velocitycontrols, auth_controls, authcontrols, spend_rules, spending_rules, card_limits]
+    aliases:
+      interval: [period, window, reset_period, velocity_window, frequency, limit_period]
+      limit: [amount, max_amount, limit_amount, spend_limit, usage_limit]
+      categories: [allowed_categories, blocked_categories, merchant_categories, mcc, merchant_scope]
+  card_program:
+    requires: [card]
+    segments: [card_programs, card-programs, card_products, card-products, cardproducts, programs, card_designs, card-designs, products]
+    aliases:
+      name: [title, display_name, program_name]
+      network: [brand, card_network, scheme]
+      type: [card_type, form_factor, kind]
+
+# Reviewed by hand: providers counted through /cards that do not issue cards.
+exclude:
+  card:
+    goody: /cards are greeting cards
+    scvd-store: /card is a collectible-card listing
+    lightspeed: /id-cards are staff ID badges
+    execution-market: /card is a profile card
+    booking-com: /payments/cards are a guest's saved cards
+    mastercard: /cards is the card-number update service (account updater)
+    korapay: /charges/card charges a card
+    razorpay: /payments/{id}/card is the card used on a payment
+    toss-payments: /billing/authorizations/card registers a billing card
+    processout: /cards tokenizes a card for payment
+    tabapay: /cards stores a card for push-to-card payouts
+    payabli: /MoneyOutCard pays out to a card
+    coinflow: /customer/card is a customer's saved card
+    culqi: /cards are saved cards (tokens for charges)
+    layup-technologies: /cards are saved cards for debit orders
+    plug: /cards are saved cards for charges
+    six-group: Click to Pay card enrolment
+    evervault: /payments/cards are vaulted cards for payment
+    chargebee: /cards are subscription billing cards
+    openpay: /{merchant}/cards are saved cards
+    helcim: saved cards
+    interchecks: payee accounts, not issued cards
+    verifone: /card is a card-on-file token
+    lemonway: /moneyins/card is a pay-in card
+    mangopay: /cards are registered pay-in cards
+    affirm: a single-use virtual card minted for one checkout is a payment instrument, not an issuing programme
+
+# One company, several catalog listings (scripts/duplicates.py, confirmed by hand).
+duplicates:
+  finix: [finix-payments]
+  mesh: [mesh-connect]
+  orbii: [orbii-tech-ltd]

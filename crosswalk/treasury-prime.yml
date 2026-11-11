@@ -1,0 +1,24 @@
+provider: treasury-prime
+apis_io: https://apis.io/providers/treasury-prime/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/treasury-prime-openapi.yml#GET /card
+    - openapi/_original/treasury-prime-openapi.yml#GET /card/{id}
+    - openapi/_original/treasury-prime-openapi.yml#PATCH /card/{id}
+    - openapi/_original/treasury-prime-openapi.yml#POST /card
+  card_transaction:
+    path_segment:
+    - transaction
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/treasury-prime-openapi.yml#GET /transaction
+    - openapi/_original/treasury-prime-openapi.yml#GET /transaction/{id}
+    - openapi/_original/treasury-prime-openapi.yml#PATCH /transaction/{id}

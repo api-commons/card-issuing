@@ -1,0 +1,55 @@
+provider: wordline
+apis_io: https://apis.io/providers/wordline/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      last4: maskedPan
+      expires_at: expiryDate
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/card-contracts/external-card-contracts/{issuerCardContractExternalReference}/cards
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/card-contracts/{cardContractReference}/cards
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/cards/{cardReference}
+  cardholder:
+    path_segment:
+    - cardholder
+    properties:
+      last_name: lastName
+      first_name: firstName
+      billing_address: addresses
+      date_of_birth: birthDate
+    core_coverage: 0.4
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/card-contracts/external-card-contracts/{issuerCardContractExternalReference}/cardholder
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/card-contracts/{cardContractReference}/cardholder
+  authorization:
+    path_segment:
+    - authorisations
+    - authorizations
+    properties:
+      amount: totalAmount
+      merchant_category_code: merchantCategoryCode
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/external-accounts/{issuerAccountExternalReference}/authorizations
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/external-accounts/{issuerAccountExternalReference}/authorizations/{authorizationId}
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/{accountReference}/authorizations
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/{accountReference}/authorizations/{authorizationId}
+    - openapi/_original/worldline-open-banking-payment-initiation-3.15.0.yaml#POST /bulk-payments/{paymentId}/authorisations
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: billingAmount
+      status: status
+      created_at: creationDate
+      settled_at: settlementDate
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/transactions/{transactionId}
+    - openapi/_original/worldline-interchange-fees-api.yaml#GET /acquiring/interchangefees/v2.0/acquirers/{acquirerId}/transactions/{transactionId}

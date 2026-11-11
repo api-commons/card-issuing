@@ -1,0 +1,43 @@
+provider: ramp
+apis_io: https://apis.io/providers/ramp/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: state
+      id: id
+      last4: last_four
+      cardholder_id: cardholder_id
+      name: display_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ramp-developer-api-openapi.yml#GET /cards
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: last_name
+      id: id
+      first_name: first_name
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/ramp-developer-api-openapi.yml#GET /users
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      status: state
+      merchant: merchant_name
+      card_id: card_id
+      currency: currency_code
+      cardholder_id: user_id
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/ramp-developer-api-openapi.yml#GET /transactions
+    - openapi/_original/ramp-developer-api-openapi.yml#GET /transactions/{id}

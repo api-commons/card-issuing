@@ -1,0 +1,64 @@
+provider: tietoevry
+apis_io: https://apis.io/providers/tietoevry/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      last4: maskedPan
+      name:
+      - name
+      - displayName
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tietoevry-tieto-xs2a-accounts-cards-premium.v1_3.yaml#GET /{sandbox|live}/xs2a-premium/v1.3/cards
+    - openapi/_original/tietoevry-tieto-xs2a-accounts-cards-premium.v1_3.yaml#GET /{sandbox|live}/xs2a-premium/v1.3/cards/{card-id}
+    - openapi/_original/tietoevry-tieto-xs2a-accounts-cards-premium.v1_3_2.yaml#GET /{sandbox|live}/xs2a-premium/v1.3/cards
+    - openapi/_original/tietoevry-tieto-xs2a-accounts-cards-premium.v1_3_2.yaml#GET /{sandbox|live}/xs2a-premium/v1.3/cards/{card-id}
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      last_name: lastName
+      first_name: firstName
+      phone: phone
+      cardholder_id:
+      - userId
+      - customerId
+    core_coverage: 0.8
+    evidence:
+    - openapi/_original/tietoevry-tieto-xs2a-vam-users.yaml#DELETE /sandbox/xs2a-vam/v1.3/users/{user-id}
+    - openapi/_original/tietoevry-tieto-xs2a-vam-users.yaml#GET /sandbox/xs2a-vam/v1.3/users
+    - openapi/_original/tietoevry-tieto-xs2a-vam-users.yaml#GET /sandbox/xs2a-vam/v1.3/users/{user-id}
+    - openapi/_original/tietoevry-tieto-xs2a-vam-users.yaml#POST /sandbox/xs2a-vam/v1.3/users
+    - openapi/_original/tietoevry-tieto-xs2a-vam-users.yaml#PUT /sandbox/xs2a-vam/v1.3/users/{user-id}
+  authorization:
+    path_segment:
+    - authorisations
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/consents/{consent-id}/authorisations
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/consents/{consent-id}/authorisations/{authorisation-id}
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/funds-confirmation-consents/{consent-id}/authorisations
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/funds-confirmation-consents/{consent-id}/authorisations/{authorisation-id}
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/payments/{payment-product}/{payment-id}/authorisations
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: cardTransactionId
+      card_id: card
+      transaction_id: transactionId
+    core_coverage: 0.167
+    evidence:
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/accounts/{account-id}/transactions
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger_2.json#GET /v1/xs2a/v1.0/providers/{provider-id}/accounts/{account-id}/transactions
+    - openapi/_original/tietoevry-openbanking-xs2a-swagger.json#GET /sandbox/xs2a/v1.3/accounts/{account-id}/transactions
+    - openapi/_original/tietoevry-openbanking-xs2a-swagger.json#GET /sandbox/xs2a/v1.3/accounts/{account-id}/transactions/{transactionId}
+    - openapi/_original/tietoevry-openbanking-xs2a-swagger_2.json#GET /sandbox/xs2a/v1.3/accounts/{account-id}/transactions

@@ -1,0 +1,159 @@
+provider: marqeta
+apis_io: https://apis.io/providers/marqeta/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    - card
+    properties:
+      status:
+      - state
+      - status
+      id:
+      - token
+      - id
+      last4:
+      - last_four
+      - lastFourDigits
+      type:
+      - type
+      - cardType
+      created_at:
+      - created_time
+      - createdOn
+      expires_at:
+      - expiration
+      - expiration_time
+      - expirationDate
+      cardholder_id:
+      - user_token
+      - userToken
+      name: nameOnCard
+      card_id:
+      - card
+      - card_token
+      - cardToken
+      currency: currencyCode
+      metadata: metadata
+      account_id: account_token
+      updated_at:
+      - updated_time
+      - last_modified_time
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#DELETE /digitalwallets/aliasdirectory/visa/cards/{paymentCredentialId}
+    - openapi/_original/marqeta-core-api-openapi.yml#DELETE /digitalwallets/clicktopay/visa/cards/{card_token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/cards
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/cards/{card_token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /cards
+  cardholder:
+    path_segment:
+    - user
+    - users
+    properties:
+      email: email
+      last_name:
+      - lastName
+      - last_name
+      id: token
+      first_name:
+      - firstName
+      - first_name
+      phone: phone
+      status:
+      - state
+      - status
+      created_at: created_time
+      date_of_birth: birth_date
+      cardholder_id:
+      - user_token
+      - userToken
+      updated_at: last_modified_time
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#DELETE /digitalwallets/clicktopay/visa/users
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /balances/user/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /cards/user/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /depositaccounts/account/{account_number}/user
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /depositaccounts/user/{token}
+  authorization:
+    path_segment:
+    - authorization
+    - authorizations
+    properties:
+      amount:
+      - amount
+      - total_amount
+      merchant: card_acceptor
+      card_id: card_token
+      currency: currency_code
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#POST /simulate/authorization
+    - openapi/_original/marqeta-diva-api-openapi.yml#GET /views/authorizations/{time_agg}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: token
+      status:
+      - status
+      - state
+      merchant:
+      - merchant
+      - card_acceptor
+      created_at: created_time
+      type: type
+      card_id:
+      - card_token
+      - card
+      currency: currency_code
+      settled_at: settlement_date
+      updated_at: last_modified_time
+      cardholder_id: user_token
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/transactions
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /cards/{token}/transactions
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /programreserve/transactions
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /transactions
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /transactions/{token}
+  spending_control:
+    path_segment:
+    - velocitycontrols
+    - authcontrols
+    properties:
+      id: token
+      limit: usage_limit
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#DELETE /velocitycontrols/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /authcontrols
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /authcontrols/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /velocitycontrols
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /velocitycontrols/{token}
+  card_program:
+    path_segment:
+    - products
+    - cardproducts
+    properties:
+      created_at: created_time
+      id: token
+      name: name
+      updated_at:
+      - last_modified_time
+      - updated_time
+      description: description
+      active: active
+      currency: currency_code
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /cardproducts
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /cardproducts/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /policies/products
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /policies/products/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /products

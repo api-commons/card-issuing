@@ -1,0 +1,22 @@
+provider: mercury
+apis_io: https://apis.io/providers/mercury/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/mercury-openapi.yml#GET /accounts/{id}/cards
+  card_transaction:
+    path_segment:
+    - transactions
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/mercury-openapi.yml#DELETE /account/{id}/transactions/{transactionId}
+    - openapi/_original/mercury-openapi.yml#GET /accounts/{id}/transactions
+    - openapi/_original/mercury-openapi.yml#GET /accounts/{id}/transactions/{transactionId}
+    - openapi/_original/mercury-openapi.yml#PATCH /accounts/{id}/transactions/{transactionId}

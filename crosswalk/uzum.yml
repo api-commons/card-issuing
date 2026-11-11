@@ -1,0 +1,23 @@
+provider: uzum
+apis_io: https://apis.io/providers/uzum/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      id: token
+      last4: maskedPan
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/uzum-crossborder-openapi.yaml#POST /cbt/v1/transfer/card
+  spending_control:
+    path_segment:
+    - limits
+    properties:
+      limit: amount
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/uzum-ratekeeper-openapi.yaml#POST /api/v1/partner/limits

@@ -1,0 +1,47 @@
+provider: crossmint
+apis_io: https://apis.io/providers/crossmint/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      type: type
+      created_at: createdAt
+      cardholder_id: userId
+      card_id: cardId
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#DELETE /2025-06-09/wallets/{walletLocator}/cards/{cardLocator}
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/cards
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/cards/{cardLocator}
+    - openapi/_original/crossmint-openapi.yml#POST /2025-06-09/wallets/{walletLocator}/cards
+  cardholder:
+    path_segment:
+    - users
+    properties:
+      email: email
+      phone: phoneNumber
+      cardholder_id: userId
+    core_coverage: 0.4
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/users/{userLocator}
+    - openapi/_original/crossmint-openapi.yml#PUT /2025-06-09/users/{userLocator}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/me{walletLocator}/transactions
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/me{walletLocator}/transactions/{transactionId}
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/transactions
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/transactions/{transactionId}
+    - openapi/_original/crossmint-openapi.yml#POST /2025-06-09/wallets/me{walletLocator}/transactions

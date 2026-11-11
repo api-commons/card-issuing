@@ -1,0 +1,63 @@
+provider: lithic-com
+apis_io: https://apis.io/providers/lithic-com/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    - card
+    properties:
+      id: token
+      created_at: created
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/cards
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/cards/{card_token}
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/embed/card
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/transaction_monitoring/cases/{case_token}/cards
+    - openapi/_original/lithic-com-openapi.yml#PATCH /v1/cards/{card_token}
+  cardholder:
+    path_segment:
+    - account_holders
+    properties:
+      id: token
+      created_at: created
+    core_coverage: 0.2
+    evidence:
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/account_holders
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/account_holders/{account_holder_token}
+    - openapi/_original/lithic-com-openapi.yml#PATCH /v1/account_holders/{account_holder_token}
+    - openapi/_original/lithic-com-openapi.yml#POST /v1/account_holders
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: token
+      created_at: created
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/fraud/transactions/{transaction_token}
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/transaction_monitoring/cases/{case_token}/transactions
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/transactions
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/transactions/{transaction_token}
+    - openapi/_original/lithic-com-openapi.yml#POST /v1/fraud/transactions/{transaction_token}
+  spending_control:
+    path_segment:
+    - spend_limits
+    properties:
+      id: token
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/accounts/{account_token}/spend_limits
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/cards/{card_token}/spend_limits
+  card_program:
+    path_segment:
+    - card_programs
+    properties:
+      created_at: created
+      id: token
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/card_programs
+    - openapi/_original/lithic-com-openapi.yml#GET /v1/card_programs/{card_program_token}

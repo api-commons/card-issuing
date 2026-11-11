@@ -1,0 +1,486 @@
+openapi: 3.1.0
+info:
+  title: Card Issuing (API Commons)
+  version: 0.1.0-draft.20261110
+  description: 'The common Card Issuing interface, distilled from the harvested OpenAPI of 740 providers in the
+    APIs.io catalog. Not a product: no one serves this API. It is the shape the market already shares, measured,
+    so that providers, agents and integrators can map to one vocabulary. See profile.yml.'
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+paths:
+  /cards:
+    get:
+      operationId: listCards
+      summary: List cards
+      tags:
+      - Cards
+      x-commons-tier: core
+      x-commons-share: 0.812
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id001
+                  $ref: '#/components/schemas/Card'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createCard
+      summary: Create a card
+      tags:
+      - Cards
+      x-commons-tier: core
+      x-commons-share: 0.703
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+  /cards/{card_id}:
+    parameters:
+    - $ref: '#/components/parameters/card_id'
+    get:
+      operationId: getCard
+      summary: Get a card
+      tags:
+      - Cards
+      x-commons-tier: core
+      x-commons-share: 0.766
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+    patch:
+      operationId: updateCard
+      summary: Update a card
+      tags:
+      - Cards
+      x-commons-tier: extended
+      x-commons-share: 0.406
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+    delete:
+      operationId: deleteCard
+      summary: Delete a card
+      tags:
+      - Cards
+      x-commons-tier: extended
+      x-commons-share: 0.234
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+  /cardholders:
+    get:
+      operationId: listCardholders
+      summary: List cardholders
+      tags:
+      - Cardholders
+      x-commons-tier: core
+      x-commons-share: 0.821
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id002
+                  $ref: '#/components/schemas/Cardholder'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createCardholder
+      summary: Create a cardholder
+      tags:
+      - Cardholders
+      x-commons-tier: extended
+      x-commons-share: 0.464
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+  /cardholders/{cardholder_id}:
+    parameters:
+    - $ref: '#/components/parameters/cardholder_id'
+    get:
+      operationId: getCardholder
+      summary: Get a cardholder
+      tags:
+      - Cardholders
+      x-commons-tier: core
+      x-commons-share: 0.75
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+    patch:
+      operationId: updateCardholder
+      summary: Update a cardholder
+      tags:
+      - Cardholders
+      x-commons-tier: extended
+      x-commons-share: 0.464
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+  /authorizations:
+    post:
+      operationId: createAuthorization
+      summary: Create an authorization
+      tags:
+      - Authorizations
+      x-commons-tier: core
+      x-commons-share: 0.75
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id003
+                $ref: '#/components/schemas/Authorization'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+    get:
+      operationId: listAuthorizations
+      summary: List authorizations
+      tags:
+      - Authorizations
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id003
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /authorizations/{authorization_id}:
+    parameters:
+    - $ref: '#/components/parameters/authorization_id'
+    get:
+      operationId: getAuthorization
+      summary: Get an authorization
+      tags:
+      - Authorizations
+      x-commons-tier: extended
+      x-commons-share: 0.438
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+  /transactions:
+    get:
+      operationId: listCardTransactions
+      summary: List transactions
+      tags:
+      - Card Transactions
+      x-commons-tier: core
+      x-commons-share: 0.936
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id004
+                  $ref: '#/components/schemas/CardTransaction'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /transactions/{card_transaction_id}:
+    parameters:
+    - $ref: '#/components/parameters/card_transaction_id'
+    get:
+      operationId: getCardTransaction
+      summary: Get a card transaction
+      tags:
+      - Card Transactions
+      x-commons-tier: core
+      x-commons-share: 0.745
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    patch:
+      operationId: updateCardTransaction
+      summary: Update a card transaction
+      tags:
+      - Card Transactions
+      x-commons-tier: extended
+      x-commons-share: 0.213
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /spending-controls:
+    get:
+      operationId: listSpendingControls
+      summary: List spending controls
+      tags:
+      - Spending Controls
+      x-commons-tier: core
+      x-commons-share: 0.875
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id005
+                  $ref: '#/components/schemas/SpendingControl'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createSpendingControl
+      summary: Create a spending control
+      tags:
+      - Spending Controls
+      x-commons-tier: extended
+      x-commons-share: 0.375
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+  /card-programs:
+    get:
+      operationId: listCardPrograms
+      summary: List card programs
+      tags:
+      - Card Programs
+      x-commons-tier: core
+      x-commons-share: 1.0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id006
+                  $ref: '#/components/schemas/CardProgram'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createCardProgram
+      summary: Create a card program
+      tags:
+      - Card Programs
+      x-commons-tier: core
+      x-commons-share: 0.583
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+  /card-programs/{card_program_id}:
+    parameters:
+    - $ref: '#/components/parameters/card_program_id'
+    get:
+      operationId: getCardProgram
+      summary: Get a card program
+      tags:
+      - Card Programs
+      x-commons-tier: core
+      x-commons-share: 0.833
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+    patch:
+      operationId: updateCardProgram
+      summary: Update a card program
+      tags:
+      - Card Programs
+      x-commons-tier: core
+      x-commons-share: 0.5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+    delete:
+      operationId: deleteCardProgram
+      summary: Delete a card program
+      tags:
+      - Card Programs
+      x-commons-tier: extended
+      x-commons-share: 0.25
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+components:
+  schemas:
+    Card:
+      $ref: ./schema/card.json
+    Cardholder:
+      $ref: ./schema/cardholder.json
+    Authorization:
+      $ref: ./schema/authorization.json
+    CardTransaction:
+      $ref: ./schema/card_transaction.json
+    SpendingControl:
+      $ref: ./schema/spending_control.json
+    CardProgram:
+      $ref: ./schema/card_program.json
+  parameters:
+    card_id:
+      name: card_id
+      in: path
+      required: true
+      schema:
+        type: string
+    cardholder_id:
+      name: cardholder_id
+      in: path
+      required: true
+      schema:
+        type: string
+    authorization_id:
+      name: authorization_id
+      in: path
+      required: true
+      schema:
+        type: string
+    card_transaction_id:
+      name: card_transaction_id
+      in: path
+      required: true
+      schema:
+        type: string
+    spending_control_id:
+      name: spending_control_id
+      in: path
+      required: true
+      schema:
+        type: string
+    card_program_id:
+      name: card_program_id
+      in: path
+      required: true
+      schema:
+        type: string

@@ -1,0 +1,13 @@
+provider: defacto
+apis_io: https://apis.io/providers/defacto/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/defacto-openapi-original.json#GET /cards
+    - openapi/_original/defacto-openapi-original.json#GET /cards/{card_id}

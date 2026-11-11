@@ -1,0 +1,41 @@
+provider: revolut
+apis_io: https://apis.io/providers/revolut/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: state
+      id: id
+      last4: last_digits
+      created_at: created_at
+      expires_at: expiry
+      cardholder_id: holder_id
+      name: label
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/revolut-business-openapi.yaml#DELETE /cards/{card_id}
+    - openapi/_original/revolut-business-openapi.yaml#GET /cards
+    - openapi/_original/revolut-business-openapi.yaml#GET /cards/{card_id}
+    - openapi/_original/revolut-business-openapi.yaml#PATCH /cards/{card_id}
+    - openapi/_original/revolut-business-openapi.yaml#POST /cards
+  card_transaction:
+    path_segment:
+    - transactions
+    - transaction
+    properties:
+      id: id
+      status: state
+      merchant: merchant
+      created_at: created_at
+      type: type
+      card_id: card
+      updated_at: updated_at
+    core_coverage: 0.833
+    evidence:
+    - openapi/_original/revolut-business-openapi.yaml#GET /transaction/{id}
+    - openapi/_original/revolut-business-openapi.yaml#GET /transactions
+    - openapi/_original/revolut-open-banking-openapi.yaml#GET /accounts/{AccountId}/transactions

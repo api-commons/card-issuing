@@ -1,0 +1,40 @@
+provider: temenos
+apis_io: https://apis.io/providers/temenos/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      type: cardType
+      expires_at: expiryDate
+      card_id: cardId
+      account_id: accountId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/temenos-infinity-openapi.yml#GET /cards
+    - openapi/_original/temenos-infinity-openapi.yml#PUT /cards/{cardId}
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      status: status
+      currency: currency
+      transaction_id: transactionId
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/temenos-data-hub-openapi.yml#GET /analytics/transactions
+    - openapi/_original/temenos-data-hub-openapi.yml#GET /operational/transactions
+    - openapi/_original/temenos-financial-crime-mitigation-openapi.yml#POST /screening/transactions
+    - openapi/_original/temenos-fund-administration-openapi.yml#GET /holdings/transactions
+    - openapi/_original/temenos-infinity-openapi.yml#GET /accounts/{accountId}/transactions
+  card_program:
+    path_segment:
+    - products
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/temenos-transact-openapi.yml#GET /product/products

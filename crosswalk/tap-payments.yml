@@ -1,0 +1,12 @@
+provider: tap-payments
+apis_io: https://apis.io/providers/tap-payments/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/tap-payments-openapi.yml#GET /card/{customer_id}

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/card_transaction.json",
+  "title": "Card Transaction",
+  "description": "The common card_transaction in Card Issuing, distilled from 44 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.682,
+      "x-commons-providers": 30,
+      "x-commons-spellings": [
+        "amount",
+        "amountCents",
+        "billingAmount",
+        "totalAmount",
+        "amountValue",
+        "Amount"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.682,
+      "x-commons-providers": 30,
+      "x-commons-spellings": [
+        "id",
+        "token",
+        "uuid",
+        "cardTransactionId"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.614,
+      "x-commons-providers": 27,
+      "x-commons-spellings": [
+        "status",
+        "state"
+      ]
+    },
+    "merchant": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.591,
+      "x-commons-providers": 26,
+      "x-commons-spellings": [
+        "description",
+        "merchant",
+        "merchantName",
+        "merchantData",
+        "merchant_name",
+        "card_acceptor",
+        "merchant_data",
+        "MerchantName"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.545,
+      "x-commons-providers": 24,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created",
+        "created_time",
+        "creationDate",
+        "createdOn",
+        "createdDate"
+      ],
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 22,
+      "x-commons-spellings": [
+        "type",
+        "transactionType",
+        "transaction_type"
+      ]
+    },
+    "card_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.409,
+      "x-commons-providers": 18,
+      "x-commons-spellings": [
+        "card",
+        "cardId",
+        "card_id",
+        "card_token",
+        "cardToken"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.386,
+      "x-commons-providers": 17,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code",
+        "Currency"
+      ]
+    },
+    "settled_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "settlement_date",
+        "posted_at",
+        "settlementDate",
+        "settledAt",
+        "postedAt",
+        "postedDate",
+        "settled_at"
+      ],
+      "format": "date-time"
+    },
+    "transaction_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "transactionId",
+        "transaction_id",
+        "transactionID",
+        "TransactionID"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.273,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "update_time",
+        "updated_time",
+        "last_modified_time",
+        "updated",
+        "LastModified"
+      ],
+      "format": "date-time"
+    },
+    "cardholder_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.205,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "customerId",
+        "owner_id",
+        "customer_id",
+        "user_token",
+        "user_id",
+        "cardholder"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "card-issuing",
+    "concept": "card_transaction",
+    "providers": 44,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

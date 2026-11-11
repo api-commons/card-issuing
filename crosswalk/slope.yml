@@ -1,0 +1,29 @@
+provider: slope
+apis_io: https://apis.io/providers/slope/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - card
+    properties:
+      status: status
+      id: id
+      cardholder_id: customerId
+      currency: currency
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/slope-v4-openapi.json#POST /v4/simulation/payment-methods/card
+  card_transaction:
+    path_segment:
+    - transactions
+    properties:
+      amount: amount
+      id: id
+      type: type
+      currency: currency
+      settled_at: postedAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/slope-v4-openapi.json#GET /v4/transactions

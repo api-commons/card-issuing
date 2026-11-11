@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/authorization.json",
+  "title": "Authorization",
+  "description": "The common authorization in Card Issuing, distilled from 16 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.75,
+      "x-commons-providers": 12,
+      "x-commons-spellings": [
+        "amount",
+        "amount_in_cents",
+        "total_amount",
+        "transactionAmount",
+        "billingAmount",
+        "totalAmount"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "id",
+        "authorizationId",
+        "authorizationID",
+        "authorization_id",
+        "token"
+      ]
+    },
+    "merchant": {
+      "type": "object",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "merchant_name",
+        "card_acceptor",
+        "merchantName",
+        "merchant",
+        "merchantData",
+        "merchant_data"
+      ]
+    },
+    "card_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.438,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "card_id",
+        "cardToken",
+        "card_token",
+        "cardId",
+        "card"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.438,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.438,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "status"
+      ]
+    },
+    "merchant_category_code": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.375,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "mcc",
+        "merchantCategoryCode"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "date_created",
+        "createdAt",
+        "createdOn",
+        "created"
+      ],
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "card-issuing",
+    "concept": "authorization",
+    "providers": 16,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

@@ -1,0 +1,48 @@
+provider: raiffeisen-ru
+apis_io: https://apis.io/providers/raiffeisen-ru/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      status: status
+      id: id
+      type:
+      - cardType
+      - type
+      created_at: createdDate
+      expires_at: expiryDate
+      cardholder_id: employeeId
+      name: embossedName
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/v1/cards
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/v1/cards/{cardId}
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/v1/cards
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/v1/cards/{cardId}
+  card_transaction:
+    path_segment:
+    - transactions
+    - transaction
+    properties:
+      card_id: card
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/raiffeisen-ru-raif-pay-payment-form-openapi.json#GET /payments/v1/orders/{orderId}/transaction
+    - openapi/_original/raiffeisen-ru-raif-pay-payment-form-openapi.json#GET /report/v1/transactions
+    - openapi/_original/raiffeisen-ru-raif-pay-payment-form-openapi.yml#GET /payments/v1/orders/{orderId}/transaction
+    - openapi/_original/raiffeisen-ru-raif-pay-payment-form-openapi.yml#GET /report/v1/transactions
+    - openapi/_original/raiffeisen-ru-raif-pay-reports-openapi.yml#GET /v1/transactions
+  spending_control:
+    path_segment:
+    - limits
+    properties:
+      id: id
+      limit: amount
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/raiffeisen-ru-agency-factoring-openapi.yml#GET /v1/limits
+    - openapi/_original/raiffeisen-ru-agency-factoring-openapi_2.yml#GET /v1/limits
