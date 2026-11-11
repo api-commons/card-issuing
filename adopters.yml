@@ -1,5 +1,5 @@
 context: card-issuing
-generated: '2026-11-10'
+generated: '2026-11-11'
 adopters:
 - provider: agentcard
   apis_io: https://apis.io/providers/agentcard/

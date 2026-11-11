@@ -1,7 +1,7 @@
 provider: galileo-fs
 apis_io: https://apis.io/providers/galileo-fs/
 context: card-issuing
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   card:
     path_segment:
