@@ -878,23 +878,26 @@
    },
    "fiserv": {
     "segments": [
-     "cards"
+     "cards",
+     "card"
     ],
     "operations": [
      "GET item",
-     "PATCH item"
+     "PATCH item",
+     "POST collection"
     ],
     "properties": {
      "cardNumber": "string",
-     "accountNumber": "string",
-     "status": "string",
      "expirationDate": "string",
+     "status": "string",
+     "accountNumber": "string",
      "cardType": "string",
      "nameOnCard": "string"
     },
     "evidence": [
      "openapi/_original/fiserv-carddeveloper-openapi.yml#GET /v2/cards/{cardNumber}",
-     "openapi/_original/fiserv-carddeveloper-openapi.yml#PATCH /v2/cards/{cardNumber}"
+     "openapi/_original/fiserv-carddeveloper-openapi.yml#PATCH /v2/cards/{cardNumber}",
+     "openapi/_original/fiserv-carddeveloper-openapi.yml#POST /v2/cards/card"
     ]
    },
    "float-financial": {
@@ -2057,32 +2060,52 @@
     ],
     "properties": {
      "id": "string",
-     "maskedNumber": "string",
+     "accountMovementType": null,
+     "extendedNarrative": "string",
+     "authorization": null,
      "status": null,
+     "transaction": null,
+     "card": null,
+     "merchant": null,
+     "maskedNumber": null,
+     "cardStatusState": null,
+     "createdDate": null,
+     "isActivated": null,
+     "expiryDate": null,
+     "product": null,
+     "isVirtual": null,
+     "account": null,
+     "type": null,
+     "currency": null,
+     "embossedName": null,
+     "person": null,
+     "limits": "array",
+     "processingType": null,
      "activationStatus": null,
-     "createdDate": "string",
      "mediaType": "string",
      "cardType": null,
      "pinSetDate": "string",
-     "expiryDate": "string",
      "accountOwner": null,
-     "currency": null,
-     "embossedName": null,
      "employeeId": null,
      "phone3DS": null,
-     "type": "string",
-     "product": null,
      "cardOwner": null,
-     "limits": "array",
      "limitAdjustedBalance": null,
      "usageProfileId": "string",
      "paymentSystem": null
     },
     "evidence": [
+     "openapi/_original/raiffeisen-ru-corporate-cards-openapi.yml#GET /api/cards/v2/transactions/cards/{cardId}",
+     "openapi/_original/raiffeisen-ru-corporate-cards-openapi_2.yml#GET /api/cards/v2/transactions/cards/{cardId}",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v1/corporate-cards/cards",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v1/corporate-cards/cards/{cardId}",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v1/transactions/cards/{cardId}",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v2/transactions/cards/{cardId}",
      "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/v1/cards",
      "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/v1/cards/{cardId}",
-     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/v1/cards",
-     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/v1/cards/{cardId}"
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/cards/v1/corporate-cards/cards",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/cards/v1/corporate-cards/cards/{cardId}",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/cards/v1/transactions/cards/{cardId}",
+     "openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/cards/v2/transactions/cards/{cardId}"
     ]
    },
    "ramp": {
@@ -4460,6 +4483,30 @@
      "openapi/_original/eci-solutions-m1-openapi.json#GET /api/ERP/Employees"
     ]
    },
+   "edfapay-inc": {
+    "segments": [
+     "user"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET item",
+     "PUT collection"
+    ],
+    "properties": {
+     "id": "string",
+     "firstName": "string",
+     "lastName": "string",
+     "phoneNumber": "string",
+     "userType": "string",
+     "roles": "array",
+     "permissions": "array"
+    },
+    "evidence": [
+     "openapi/_original/edfapay-inc-revamp.json#DELETE /api/v1/users/user/{userId}",
+     "openapi/_original/edfapay-inc-revamp.json#GET /api/v1/users/user/{userId}",
+     "openapi/_original/edfapay-inc-revamp.json#PUT /api/v1/users/user"
+    ]
+   },
    "embat": {
     "segments": [
      "users"
@@ -6726,7 +6773,10 @@
     ],
     "operations": [
      "GET collection",
-     "POST collection"
+     "GET item",
+     "PATCH item",
+     "POST collection",
+     "PUT item"
     ],
     "properties": {
      "uuid": "string",
@@ -6734,11 +6784,24 @@
      "first_name": "string",
      "last_name": "string",
      "is_admin": "boolean",
-     "full_name": "string"
+     "full_name": "string",
+     "company_name": "string",
+     "last_login": null,
+     "job_title": "string",
+     "company_type": "string",
+     "id": "integer",
+     "tc_version": "number"
     },
     "evidence": [
      "openapi/_original/opply-openapi-original.yml#GET /api/v1/companies/merchant-of-record/masquerade/companies/{company_uuid}/users/",
-     "openapi/_original/opply-openapi-original.yml#POST /api/v1/companies/merchant-of-record-buyers/{uuid}/users/"
+     "openapi/_original/opply-openapi-original.yml#GET /api/v1/users/admin_panel/users/",
+     "openapi/_original/opply-openapi-original.yml#GET /api/v1/users/admin_panel/users/{uuid}/",
+     "openapi/_original/opply-openapi-original.yml#GET /api/v1/users/users/{uuid}/",
+     "openapi/_original/opply-openapi-original.yml#PATCH /api/v1/users/admin_panel/users/{uuid}/",
+     "openapi/_original/opply-openapi-original.yml#PATCH /api/v1/users/users/{uuid}/",
+     "openapi/_original/opply-openapi-original.yml#POST /api/v1/companies/merchant-of-record-buyers/{uuid}/users/",
+     "openapi/_original/opply-openapi-original.yml#PUT /api/v1/users/admin_panel/users/{uuid}/",
+     "openapi/_original/opply-openapi-original.yml#PUT /api/v1/users/users/{uuid}/"
     ]
    },
    "orange-business": {
@@ -18362,7 +18425,8 @@
      "transactions"
     ],
     "operations": [
-     "GET collection"
+     "GET collection",
+     "GET item"
     ],
     "properties": {
      "id": "string",
@@ -18375,7 +18439,8 @@
      "event_date": "string"
     },
     "evidence": [
-     "openapi/_original/pismo-openapi.yml#GET /accounts/v2/accounts/{accountId}/statements/{statementId}/transactions"
+     "openapi/_original/pismo-openapi.yml#GET /accounts/v2/accounts/{accountId}/statements/{statementId}/transactions",
+     "openapi/_original/pismo-openapi.yml#GET /transactions/v1/transactions/{transactionId}"
     ]
    },
    "plaid": {
@@ -25074,6 +25139,27 @@
      "openapi/_original/paypal-catalog-products-openapi-original.yml#GET /v1/catalogs/products/{product_id}",
      "openapi/_original/paypal-catalog-products-openapi-original.yml#PATCH /v1/catalogs/products/{product_id}",
      "openapi/_original/paypal-catalog-products-openapi-original.yml#POST /v1/catalogs/products"
+    ]
+   },
+   "pismo": {
+    "segments": [
+     "programs"
+    ],
+    "operations": [
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "integer",
+     "name": "string",
+     "description": "string",
+     "type": "string",
+     "currency": "string",
+     "created_at": "string"
+    },
+    "evidence": [
+     "openapi/_original/pismo-openapi.yml#GET /programs/v1/programs/{programId}",
+     "openapi/_original/pismo-openapi.yml#POST /programs/v1/programs"
     ]
    },
    "podium": {
@@ -32045,6 +32131,7 @@
     "dodo-payments",
     "earnipay",
     "eci-solutions",
+    "edfapay-inc",
     "elastic-path",
     "embat",
     "emburse",
@@ -32372,6 +32459,7 @@
     "duck-creek",
     "earnipay",
     "eci-solutions",
+    "edfapay-inc",
     "embat",
     "enfuce",
     "euronet",

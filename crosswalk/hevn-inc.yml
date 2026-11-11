@@ -52,8 +52,8 @@ concepts:
       created_at: createdAt
       id: id
       name: name
-      updated_at: updatedAt
       description: description
+      updated_at: updatedAt
       active: active
       currency: currency
       images: images

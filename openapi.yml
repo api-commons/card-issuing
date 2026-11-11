@@ -41,7 +41,7 @@ paths:
       tags:
       - Cards
       x-commons-tier: core
-      x-commons-share: 0.708
+      x-commons-share: 0.723
       responses:
         '200':
           description: OK
@@ -273,7 +273,7 @@ paths:
       tags:
       - Card Transactions
       x-commons-tier: core
-      x-commons-share: 0.745
+      x-commons-share: 0.766
       responses:
         '200':
           description: OK
@@ -349,7 +349,7 @@ paths:
       tags:
       - Card Programs
       x-commons-tier: core
-      x-commons-share: 1.0
+      x-commons-share: 0.923
       responses:
         '200':
           description: OK
@@ -374,7 +374,7 @@ paths:
       tags:
       - Card Programs
       x-commons-tier: core
-      x-commons-share: 0.583
+      x-commons-share: 0.615
       responses:
         '200':
           description: OK
@@ -395,7 +395,7 @@ paths:
       tags:
       - Card Programs
       x-commons-tier: core
-      x-commons-share: 0.833
+      x-commons-share: 0.846
       responses:
         '200':
           description: OK
@@ -407,8 +407,8 @@ paths:
       summary: Update a card program
       tags:
       - Card Programs
-      x-commons-tier: core
-      x-commons-share: 0.5
+      x-commons-tier: extended
+      x-commons-share: 0.462
       responses:
         '200':
           description: OK
@@ -426,7 +426,7 @@ paths:
       tags:
       - Card Programs
       x-commons-tier: extended
-      x-commons-share: 0.25
+      x-commons-share: 0.231
       responses:
         '200':
           description: OK

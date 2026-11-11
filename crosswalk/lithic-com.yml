@@ -57,7 +57,7 @@ concepts:
     properties:
       created_at: created
       id: token
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/lithic-com-openapi.yml#GET /v1/card_programs
     - openapi/_original/lithic-com-openapi.yml#GET /v1/card_programs/{card_program_token}

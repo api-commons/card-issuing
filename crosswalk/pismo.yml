@@ -45,3 +45,18 @@ concepts:
     core_coverage: 0.667
     evidence:
     - openapi/_original/pismo-openapi.yml#GET /accounts/v2/accounts/{accountId}/statements/{statementId}/transactions
+    - openapi/_original/pismo-openapi.yml#GET /transactions/v1/transactions/{transactionId}
+  card_program:
+    path_segment:
+    - programs
+    properties:
+      created_at: created_at
+      id: id
+      name: name
+      description: description
+      currency: currency
+      type: type
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/pismo-openapi.yml#GET /programs/v1/programs/{programId}
+    - openapi/_original/pismo-openapi.yml#POST /programs/v1/programs

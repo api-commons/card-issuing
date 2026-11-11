@@ -64,7 +64,7 @@ concepts:
       name: title
       description: description
       images: images
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/moov-api-v2026.01.00-openapi.yml#DELETE /accounts/{accountID}/products/{productID}
     - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/products

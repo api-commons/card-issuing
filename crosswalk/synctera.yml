@@ -15,9 +15,9 @@ concepts:
       - type
       expires_at: expiration_time
       cardholder_id: customer_id
+      account_id: account_id
       brand: card_brand
       metadata: metadata
-      account_id: account_id
       exp_month: expiration_month
       exp_year: expiration_year
       updated_at: last_modified_time
@@ -56,10 +56,10 @@ concepts:
       - id
       - card_program_id
       name: name
-      updated_at: last_modified_time
       description: description
+      updated_at: last_modified_time
       active: active
-    core_coverage: 0.75
+    core_coverage: 0.667
     evidence:
     - openapi/_original/synctera-openapi.json#GET /accounts/products
     - openapi/_original/synctera-openapi.json#GET /cards/products

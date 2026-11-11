@@ -6,6 +6,7 @@ concepts:
   card:
     path_segment:
     - cards
+    - card
     properties:
       status: status
       type: cardType
@@ -15,6 +16,7 @@ concepts:
     evidence:
     - openapi/_original/fiserv-carddeveloper-openapi.yml#GET /v2/cards/{cardNumber}
     - openapi/_original/fiserv-carddeveloper-openapi.yml#PATCH /v2/cards/{cardNumber}
+    - openapi/_original/fiserv-carddeveloper-openapi.yml#POST /v2/cards/card
   authorization:
     path_segment:
     - authorizations

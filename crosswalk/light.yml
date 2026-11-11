@@ -34,7 +34,7 @@ concepts:
     - products
     properties:
       name: name
-    core_coverage: 0.25
+    core_coverage: 0.333
     evidence:
     - openapi/_original/light-openapi-original.json#GET /v1/products
     - openapi/_original/light-openapi-original.json#GET /v1/products/{productId}

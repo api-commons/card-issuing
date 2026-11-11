@@ -55,7 +55,7 @@ concepts:
       id: id
       updated_at: updated_at
       status: status
-    core_coverage: 0.75
+    core_coverage: 0.667
     evidence:
     - openapi/_original/block-openapi.json#GET /v2/loyalty/programs
     - openapi/_original/block-openapi.json#GET /v2/loyalty/programs/{program_id}

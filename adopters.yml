@@ -275,6 +275,7 @@ adopters:
   concepts:
   - authorization
   - card
+  - card_program
   - card_transaction
 - provider: raiffeisen-ru
   apis_io: https://apis.io/providers/raiffeisen-ru/

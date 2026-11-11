@@ -65,7 +65,7 @@ concepts:
   card:
     segments_seen:
       cards: 54
-      card: 15
+      card: 16
       physical_cards: 1
       physical-cards: 1
       virtual-cards: 1
@@ -81,8 +81,8 @@ concepts:
       share: 0.769
       tier: core
     - operation: POST collection
-      providers: 46
-      share: 0.708
+      providers: 47
+      share: 0.723
       tier: core
     - operation: UPDATE item
       providers: 26
@@ -203,16 +203,27 @@ concepts:
       - embossedName
     - name: card_id
       tier: extended
-      providers: 16
-      share: 0.267
+      providers: 17
+      share: 0.283
       type: string
       spellings:
-      - cardId
       - card
+      - cardId
       - cardToken
       - card_id
       - cardID
       - card_token
+    - name: account_id
+      tier: extended
+      providers: 14
+      share: 0.233
+      type: string
+      spellings:
+      - account_id
+      - accountId
+      - wallet_id
+      - account_token
+      - account
     - name: brand
       tier: extended
       providers: 14
@@ -242,16 +253,6 @@ concepts:
       - custom_fields
       - customFields
       - attributes
-    - name: account_id
-      tier: extended
-      providers: 13
-      share: 0.217
-      type: string
-      spellings:
-      - account_id
-      - accountId
-      - wallet_id
-      - account_token
     - name: exp_month
       tier: extended
       providers: 13
@@ -285,7 +286,7 @@ concepts:
       - updated
       - last_modified_time
       - updated_time
-    long_tail_count: 544
+    long_tail_count: 552
     long_tail_sample:
     - shipping
     - billing_address
@@ -310,6 +311,7 @@ concepts:
     - fingerprint
     - idempotency_key
     - is_physical
+    - is_virtual
     - items
     - limit
     - payment_method_id
@@ -326,7 +328,6 @@ concepts:
     - assigned_to
     - assignees
     - authentication
-    - billing_name
   cardholder:
     segments_seen:
       users: 15
@@ -694,8 +695,8 @@ concepts:
       share: 0.936
       tier: core
     - operation: GET item
-      providers: 35
-      share: 0.745
+      providers: 36
+      share: 0.766
       tier: core
     - operation: UPDATE item
       providers: 10
@@ -985,37 +986,37 @@ concepts:
   card_program:
     segments_seen:
       products: 8
-      programs: 3
+      programs: 4
       card_programs: 1
       cardproducts: 1
-    providers_exposing: 12
-    providers_with_readable_schema: 12
+    providers_exposing: 13
+    providers_with_readable_schema: 13
     operations:
     - operation: GET collection
       providers: 12
-      share: 1.0
+      share: 0.923
       tier: core
     - operation: GET item
-      providers: 10
-      share: 0.833
+      providers: 11
+      share: 0.846
       tier: core
     - operation: POST collection
-      providers: 7
-      share: 0.583
+      providers: 8
+      share: 0.615
       tier: core
     - operation: UPDATE item
       providers: 6
-      share: 0.5
-      tier: core
+      share: 0.462
+      tier: extended
     - operation: DELETE item
       providers: 3
-      share: 0.25
+      share: 0.231
       tier: extended
     properties:
     - name: created_at
       tier: core
-      providers: 9
-      share: 0.75
+      providers: 10
+      share: 0.769
       type: string
       spellings:
       - created_at
@@ -1026,8 +1027,8 @@ concepts:
       - date_created
     - name: id
       tier: core
-      providers: 9
-      share: 0.75
+      providers: 10
+      share: 0.769
       type: string
       spellings:
       - id
@@ -1035,40 +1036,40 @@ concepts:
       - card_program_id
     - name: name
       tier: core
-      providers: 8
-      share: 0.667
+      providers: 9
+      share: 0.692
       type: string
       spellings:
       - name
       - title
-    - name: updated_at
-      tier: core
+    - name: description
+      tier: extended
       providers: 6
-      share: 0.5
+      share: 0.462
+      type: string
+      spellings:
+      - description
+    - name: updated_at
+      tier: extended
+      providers: 6
+      share: 0.462
       type: string
       spellings:
       - updated_at
       - last_modified_time
       - updatedAt
       - updated_time
-    - name: description
-      tier: extended
-      providers: 5
-      share: 0.417
-      type: string
-      spellings:
-      - description
     - name: active
       tier: extended
       providers: 4
-      share: 0.333
+      share: 0.308
       type: boolean
       spellings:
       - active
     - name: currency
       tier: extended
-      providers: 3
-      share: 0.25
+      providers: 4
+      share: 0.308
       type: string
       spellings:
       - currency
@@ -1076,18 +1077,25 @@ concepts:
     - name: images
       tier: extended
       providers: 3
-      share: 0.25
+      share: 0.231
       type: array
       spellings:
       - images
     - name: status
       tier: extended
       providers: 3
-      share: 0.25
+      share: 0.231
       type: string
       spellings:
       - status
-    long_tail_count: 102
+    - name: type
+      tier: extended
+      providers: 3
+      share: 0.231
+      type: string
+      spellings:
+      - type
+    long_tail_count: 101
     long_tail_sample:
     - accrual_rules
     - end_date
@@ -1099,7 +1107,6 @@ concepts:
     - reward_tiers
     - start_date
     - terminology
-    - type
     - accrual_payout_schedule
     - available
     - bank
@@ -1129,3 +1136,4 @@ concepts:
     - default_tax_id
     - delivery
     - delivery_year
+    - digital_wallet_tokenization

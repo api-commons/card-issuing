@@ -10,19 +10,22 @@ concepts:
       status: status
       id: id
       type:
-      - cardType
       - type
+      - cardType
       created_at: createdDate
       expires_at: expiryDate
       cardholder_id: employeeId
       name: embossedName
+      card_id: card
+      account_id: account
       currency: currency
     core_coverage: 0.75
     evidence:
-    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/v1/cards
-    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/v1/cards/{cardId}
-    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/v1/cards
-    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.yml#GET /api/v1/cards/{cardId}
+    - openapi/_original/raiffeisen-ru-corporate-cards-openapi.yml#GET /api/cards/v2/transactions/cards/{cardId}
+    - openapi/_original/raiffeisen-ru-corporate-cards-openapi_2.yml#GET /api/cards/v2/transactions/cards/{cardId}
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v1/corporate-cards/cards
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v1/corporate-cards/cards/{cardId}
+    - openapi/_original/raiffeisen-ru-raif-pay-corporate-cards-openapi.json#GET /api/cards/v1/transactions/cards/{cardId}
   card_transaction:
     path_segment:
     - transactions

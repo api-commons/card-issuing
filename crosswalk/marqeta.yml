@@ -35,9 +35,9 @@ concepts:
       - card
       - card_token
       - cardToken
+      account_id: account_token
       currency: currencyCode
       metadata: metadata
-      account_id: account_token
       updated_at:
       - updated_time
       - last_modified_time
@@ -143,10 +143,10 @@ concepts:
       created_at: created_time
       id: token
       name: name
+      description: description
       updated_at:
       - last_modified_time
       - updated_time
-      description: description
       active: active
       currency: currency_code
       status: status
