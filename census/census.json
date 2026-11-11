@@ -1,5 +1,23 @@
 {
  "cohort_size": 740,
+ "unreadable": [
+  {
+   "spec": "novopayment/openapi/_original/novopayment-issuer-tokenization-openapi.yml",
+   "error": "while scanning a block scalar"
+  },
+  {
+   "spec": "novopayment/openapi/_original/novopayment-issuer-tokenization.yaml",
+   "error": "while scanning a block scalar"
+  },
+  {
+   "spec": "novopayment/openapi/_original/novopayment-payment-authorizer-openapi.yml",
+   "error": "while scanning a block scalar"
+  },
+  {
+   "spec": "novopayment/openapi/_original/novopayment-payment-authorizer.yaml",
+   "error": "while scanning a block scalar"
+  }
+ ],
  "concepts": {
   "card": {
    "affirm": {
@@ -1554,8 +1572,12 @@
      "cards"
     ],
     "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
      "POST collection",
-     "PUT collection"
+     "PUT collection",
+     "PUT item"
     ],
     "properties": {
      "code": "string",
@@ -1565,11 +1587,31 @@
      "newCardNumber": "integer",
      "cardNumber": "integer",
      "date": "string",
-     "isFrozen": "boolean"
+     "isFrozen": "boolean",
+     "billingAddress": "object",
+     "cardAlias": "string",
+     "cardId": "string",
+     "cardholderName": "string",
+     "cardExpiry": "object",
+     "paymentNetworkName": "string",
+     "primaryAccountNumber": "string",
+     "primaryAccountNumberSource": "string",
+     "primaryAccountNumberSuffix": "string",
+     "status": "string",
+     "expiryInfo": "object",
+     "CardExpiry": "object",
+     "card_id": "string",
+     "pan": "string"
     },
     "evidence": [
      "openapi/_original/mastercard-benefit-allocation-service-openapi.yml#POST /cards",
-     "openapi/_original/mastercard-benefit-allocation-service-openapi.yml#PUT /cards"
+     "openapi/_original/mastercard-benefit-allocation-service-openapi.yml#PUT /cards",
+     "openapi/_original/mastercard-donate-api-openapi.yml#DELETE /donors/{donor_id}/cards/{card_id}",
+     "openapi/_original/mastercard-donate-api-openapi.yml#GET /donations/non-ma/setup/cards",
+     "openapi/_original/mastercard-donate-api-openapi.yml#GET /donors/{donor_id}/cards",
+     "openapi/_original/mastercard-donate-api-openapi.yml#GET /donors/{donor_id}/cards/{card_id}",
+     "openapi/_original/mastercard-donate-api-openapi.yml#POST /donors/{donor_id}/cards",
+     "openapi/_original/mastercard-donate-api-openapi.yml#PUT /donors/{donor_id}/cards/{card_id}"
     ]
    },
    "mercury": {
@@ -2869,6 +2911,31 @@
      "openapi/_original/ecommerce-api.json#PATCH /api/v2/card/{id}",
      "openapi/_original/ecommerce-api.json#POST /api/v2/transactions/card",
      "openapi/_original/ecommerce-api.json#PUT /api/v2/card"
+    ]
+   },
+   "visa": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "last4": "string",
+     "vCardID": "string",
+     "expirationDate": "object",
+     "paymentAccountReference": "string",
+     "encCard": "string",
+     "clientCustomerID": "string",
+     "vClientIDForPartner": "string",
+     "vCustomerIDForPartner": "string"
+    },
+    "evidence": [
+     "openapi/_original/visa-in-app-provisioning.yml#DELETE /universal/core/cards/{vCardID}",
+     "openapi/_original/visa-in-app-provisioning.yml#GET /universal/core/cards/{vCardID}",
+     "openapi/_original/visa-in-app-provisioning.yml#POST /universal/core/cards"
     ]
    },
    "vopay": {
@@ -5844,7 +5911,8 @@
     "operations": [
      "DELETE item",
      "GET collection",
-     "GET item"
+     "GET item",
+     "POST collection"
     ],
     "properties": {
      "account_type": "string",
@@ -5879,7 +5947,8 @@
      "openapi/_original/lightspeed-x-series-openapi.json#DELETE /users/{user_id}",
      "openapi/_original/lightspeed-x-series-openapi.json#GET /user",
      "openapi/_original/lightspeed-x-series-openapi.json#GET /users",
-     "openapi/_original/lightspeed-x-series-openapi.json#GET /users/{user_id}"
+     "openapi/_original/lightspeed-x-series-openapi.json#GET /users/{user_id}",
+     "openapi/_original/lightspeed-x-series-openapi.json#POST /users/bulk"
     ]
    },
    "lithic-com": {
@@ -6252,7 +6321,10 @@
      "users"
     ],
     "operations": [
+     "DELETE item",
+     "GET item",
      "POST collection",
+     "PUT collection",
      "PUT item"
     ],
     "properties": {
@@ -6266,11 +6338,66 @@
      "cardBaseCurrency": "string",
      "expiryInfo": "object",
      "billingAddress": "object",
-     "locale": "string"
+     "locale": "string",
+     "firstName": "string",
+     "lastName": "string",
+     "phone": "string",
+     "userId": "string",
+     "userIdType": "string",
+     "accountId": "string",
+     "accountIdType": "string",
+     "companyIca": "integer",
+     "motherMaidenName": "string",
+     "birthDate": "string",
+     "nationalIdentifier": "string",
+     "businessPhoneNumber": "string",
+     "mobilePhoneNumber": "string",
+     "homePhoneNumber": "string",
+     "faxPhoneNumber": "string",
+     "emailAddress": "string",
+     "vip": "boolean",
+     "employee": "boolean",
+     "acceptEmails": "boolean",
+     "acceptSms": "boolean",
+     "acceptPromotionalInfo": "boolean",
+     "genericIdentification": "string",
+     "genericIdentificationDescription": "string",
+     "userDefined1": "string",
+     "userDefined2": "string",
+     "userDefined3": "string",
+     "userDefined4": "string",
+     "pcloUser": "object",
+     "address": "object",
+     "account": "object",
+     "acceptTracking": "boolean",
+     "managePromotionalEmail": "boolean",
+     "managePromotionalParticipation": "boolean",
+     "managePromotionalSMS": "boolean",
+     "authorizedUser1": "string",
+     "authorizedUser2": "string",
+     "comments": "string",
+     "customerReplaced": "boolean",
+     "manageEmail": "boolean",
+     "genderCode": "string",
+     "middleName": "string",
+     "manageMobilePhone": "boolean",
+     "namePrefix": "string",
+     "nameSuffix": "string",
+     "preferredLanguage": "string",
+     "programPreview": "boolean",
+     "segmentationCluster": "string",
+     "verificationDetails": "array"
     },
     "evidence": [
      "openapi/_original/mastercard-carbon-calculator-experience-api-openapi.yml#POST /issuers/users",
-     "openapi/_original/mastercard-carbon-calculator-experience-api-openapi.yml#PUT /issuers/users/{userid}"
+     "openapi/_original/mastercard-carbon-calculator-experience-api-openapi.yml#PUT /issuers/users/{userid}",
+     "openapi/_original/mastercard-in-control-for-mobile-payments-openapi.yml#DELETE /users/{user_guid}",
+     "openapi/_original/mastercard-in-control-for-mobile-payments-openapi.yml#GET /users/{user_guid}",
+     "openapi/_original/mastercard-in-control-for-mobile-payments-openapi.yml#POST /users",
+     "openapi/_original/mastercard-in-control-for-mobile-payments-openapi.yml#PUT /users/{user_guid}",
+     "openapi/_original/mastercard-user-account-management-openapi.yml#GET /users/{id}",
+     "openapi/_original/mastercard-user-account-management-openapi.yml#POST /users",
+     "openapi/_original/mastercard-user-account-management-openapi.yml#PUT /users"
     ]
    },
    "mavenlink": {
@@ -8407,6 +8534,7 @@
     "evidence": [
      "openapi/_original/virto-commerce-customer-openapi.json#GET /api/employees",
      "openapi/_original/virto-commerce-customer-openapi.json#POST /api/employees",
+     "openapi/_original/virto-commerce-customer-openapi.json#POST /api/employees/bulk",
      "openapi/_original/virto-commerce-platform-openapi.json#DELETE /api/platform/security/users",
      "openapi/_original/virto-commerce-platform-openapi.json#GET /api/platform/security/users",
      "openapi/_original/virto-commerce-platform-openapi.json#GET /api/platform/security/users/{userName}",
@@ -16521,9 +16649,27 @@
      "transactions"
     ],
     "operations": [
+     "GET collection",
      "POST collection"
     ],
     "properties": {
+     "transactionId": "string",
+     "transactionStatus": "string",
+     "transactionMessage": "string",
+     "realTimeTransaction": "object",
+     "recurringTransaction": "object",
+     "cardId": "string",
+     "charityId": "string",
+     "donationType": "string",
+     "fromDate": "string",
+     "toDate": "string",
+     "limit": "integer",
+     "offset": "integer",
+     "totalTransactions": "integer",
+     "filteredTransactions": "integer",
+     "donorId": "string",
+     "currencyCode": "string",
+     "transactionsSummary": "object",
      "id": "string",
      "deviceInsights": "object",
      "individualInsights": "object",
@@ -16580,6 +16726,10 @@
      "accountDetails": "object"
     },
     "evidence": [
+     "openapi/_original/mastercard-donate-api-openapi.yml#GET /donations/transactions",
+     "openapi/_original/mastercard-donate-api-openapi.yml#POST /donations/non-ma/transactions",
+     "openapi/_original/mastercard-donate-api-openapi.yml#POST /donations/program/{programId}/transactions",
+     "openapi/_original/mastercard-donate-api-openapi.yml#POST /donors/{donor_id}/transactions",
      "openapi/_original/mastercard-identity-insights-for-transactions-openapi.yml#POST /transactions"
     ]
    },
@@ -17142,13 +17292,13 @@
      "openapi/_original/monite-openapi-2023-09-01.json#GET /transactions/{transaction_id}",
      "openapi/_original/monite-openapi-2023-09-01.json#PATCH /transactions/{transaction_id}",
      "openapi/_original/monite-openapi-2023-09-01.json#POST /transactions",
+     "openapi/_original/monite-openapi-2023-09-01.json#POST /transactions/bulk",
      "openapi/_original/monite-openapi-2024-01-31.json#DELETE /transactions/{transaction_id}",
      "openapi/_original/monite-openapi-2024-01-31.json#GET /transactions",
      "openapi/_original/monite-openapi-2024-01-31.json#GET /transactions/{transaction_id}",
      "openapi/_original/monite-openapi-2024-01-31.json#PATCH /transactions/{transaction_id}",
      "openapi/_original/monite-openapi-2024-01-31.json#POST /transactions",
-     "openapi/_original/monite-openapi-2024-05-25.json#DELETE /transactions/{transaction_id}",
-     "openapi/_original/monite-openapi-2024-05-25.json#GET /transactions"
+     "openapi/_original/monite-openapi-2024-01-31.json#POST /transactions/bulk"
     ]
    },
    "mono-africa": {
@@ -18116,6 +18266,7 @@
      "page": "integer"
     },
     "evidence": [
+     "openapi/_original/paypal-billing-subscriptions-api-openapi.yml#GET /v1/billing/subscriptions/{id}/transactions",
      "openapi/_original/paypal-billing-subscriptions-openapi-original.yml#GET /v1/billing/subscriptions/{id}/transactions",
      "openapi/_original/paypal-reporting-transactions-openapi-original.yml#GET /v1/reporting/transactions"
     ]
@@ -25054,6 +25205,7 @@
      "openapi/_original/ready2order-openapi-original.json#GET /products",
      "openapi/_original/ready2order-openapi-original.json#GET /products/{id}",
      "openapi/_original/ready2order-openapi-original.json#POST /products",
+     "openapi/_original/ready2order-openapi-original.json#POST /products/batch",
      "openapi/_original/ready2order-openapi-original.json#PUT /products/{id}"
     ]
    },
@@ -26108,6 +26260,7 @@
      "openapi/_original/virto-commerce-catalog-openapi.json#PATCH /api/catalog/products",
      "openapi/_original/virto-commerce-catalog-openapi.json#PATCH /api/catalog/products/{id}",
      "openapi/_original/virto-commerce-catalog-openapi.json#POST /api/catalog/products",
+     "openapi/_original/virto-commerce-catalog-openapi.json#POST /api/catalog/products/batch",
      "openapi/_original/virto-commerce-catalog-openapi.json#POST /api/catalog/search/products",
      "openapi/_original/virto-commerce-inventory-openapi.json#GET /api/inventory/products",
      "openapi/_original/virto-commerce-inventory-openapi.json#GET /api/inventory/products/{productId}",
@@ -27485,6 +27638,7 @@
     "vicai",
     "virgin-money-uk",
     "virto-commerce",
+    "visa",
     "vivenu",
     "volt-io",
     "vopay",
@@ -27944,6 +28098,7 @@
     "kakao",
     "keap",
     "keycorp",
+    "klarna",
     "later",
     "layup-technologies",
     "lean-technologies",
@@ -29845,6 +30000,7 @@
     "macquarie-bank",
     "mamo",
     "mangopay",
+    "mastercard",
     "mavenlink",
     "mavrck",
     "memo-bank",
@@ -30179,6 +30335,7 @@
     "lootrush",
     "lorum",
     "macquarie-bank",
+    "mastercard",
     "mavrck",
     "momence",
     "monetizenow",
@@ -30343,6 +30500,7 @@
     "lean-technologies",
     "lendapi",
     "lightspeed",
+    "mastercard",
     "memo-bank",
     "modulr",
     "moniepoint",
@@ -30448,6 +30606,7 @@
     "iugu",
     "ledger",
     "lendapi",
+    "mastercard",
     "mercury",
     "mono-africa",
     "mono-co",
@@ -31248,6 +31407,7 @@
     "mamo",
     "mandateshield-com",
     "marqeta",
+    "mastercard",
     "mastercard-gateway-api",
     "mavrck",
     "memo-bank",
@@ -32131,6 +32291,7 @@
     "versusgame",
     "vicai",
     "virto-commerce",
+    "visa",
     "vivenu",
     "volt-io",
     "vtex",
@@ -32341,6 +32502,7 @@
     "verifone",
     "versusgame",
     "virto-commerce",
+    "visa",
     "vivenu",
     "volt-io",
     "vtex",
@@ -32454,6 +32616,7 @@
     "lorum",
     "mamo",
     "marqeta",
+    "mastercard",
     "mavenlink",
     "memo-bank",
     "method-financial",
@@ -32558,6 +32721,7 @@
     "lloyds-banking-group",
     "malt",
     "mangopay",
+    "mastercard",
     "monument-bank",
     "mtn-group",
     "natwest",

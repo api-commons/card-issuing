@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/card-issuing/main/schema/card.json",
   "title": "Card",
-  "description": "The common card in Card Issuing, distilled from 59 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common card in Card Issuing, distilled from 60 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.746,
+      "x-commons-share": 0.733,
       "x-commons-providers": 44,
       "x-commons-spellings": [
         "status",
@@ -20,7 +20,7 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.678,
+      "x-commons-share": 0.667,
       "x-commons-providers": 40,
       "x-commons-spellings": [
         "id",
@@ -32,8 +32,8 @@
     "last4": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.593,
-      "x-commons-providers": 35,
+      "x-commons-share": 0.6,
+      "x-commons-providers": 36,
       "x-commons-spellings": [
         "last4",
         "last_four",
@@ -48,7 +48,7 @@
     "type": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.593,
+      "x-commons-share": 0.583,
       "x-commons-providers": 35,
       "x-commons-spellings": [
         "type",
@@ -61,7 +61,7 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.492,
+      "x-commons-share": 0.483,
       "x-commons-providers": 29,
       "x-commons-spellings": [
         "created_at",
@@ -77,13 +77,13 @@
     "expires_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.407,
-      "x-commons-providers": 24,
+      "x-commons-share": 0.417,
+      "x-commons-providers": 25,
       "x-commons-spellings": [
         "expiry",
+        "expirationDate",
         "expiryDate",
         "expiration",
-        "expirationDate",
         "expiration_date",
         "expiry_date",
         "expiration_time",
@@ -94,7 +94,7 @@
     "cardholder_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.39,
+      "x-commons-share": 0.383,
       "x-commons-providers": 23,
       "x-commons-spellings": [
         "customer_id",
@@ -110,7 +110,7 @@
     "name": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.373,
+      "x-commons-share": 0.367,
       "x-commons-providers": 22,
       "x-commons-spellings": [
         "name",
@@ -126,7 +126,7 @@
     "card_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.271,
+      "x-commons-share": 0.267,
       "x-commons-providers": 16,
       "x-commons-spellings": [
         "cardId",
@@ -140,7 +140,7 @@
     "brand": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.237,
+      "x-commons-share": 0.233,
       "x-commons-providers": 14,
       "x-commons-spellings": [
         "brand",
@@ -152,7 +152,7 @@
     "currency": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.237,
+      "x-commons-share": 0.233,
       "x-commons-providers": 14,
       "x-commons-spellings": [
         "currency",
@@ -163,7 +163,7 @@
     "metadata": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.237,
+      "x-commons-share": 0.233,
       "x-commons-providers": 14,
       "x-commons-spellings": [
         "metadata",
@@ -175,7 +175,7 @@
     "account_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.22,
+      "x-commons-share": 0.217,
       "x-commons-providers": 13,
       "x-commons-spellings": [
         "account_id",
@@ -187,7 +187,7 @@
     "exp_month": {
       "type": "integer",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.22,
+      "x-commons-share": 0.217,
       "x-commons-providers": 13,
       "x-commons-spellings": [
         "expiryMonth",
@@ -200,7 +200,7 @@
     "exp_year": {
       "type": "integer",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.22,
+      "x-commons-share": 0.217,
       "x-commons-providers": 13,
       "x-commons-spellings": [
         "expiryYear",
@@ -213,7 +213,7 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.203,
+      "x-commons-share": 0.2,
       "x-commons-providers": 12,
       "x-commons-spellings": [
         "updated_at",
@@ -231,7 +231,7 @@
   "x-commons": {
     "context": "card-issuing",
     "concept": "card",
-    "providers": 59,
+    "providers": 60,
     "generated": "2026-11-10",
     "version": "0.1.0-draft.20261110",
     "status": "draft"

@@ -410,6 +410,11 @@ adopters:
   concepts:
   - card
   - spending_control
+- provider: visa
+  apis_io: https://apis.io/providers/visa/
+  crosswalk: crosswalk/visa.yml
+  concepts:
+  - card
 - provider: vopay
   apis_io: https://apis.io/providers/vopay/
   crosswalk: crosswalk/vopay.yml

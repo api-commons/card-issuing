@@ -1,0 +1,16 @@
+provider: visa
+apis_io: https://apis.io/providers/visa/
+context: card-issuing
+generated: '2026-11-10'
+concepts:
+  card:
+    path_segment:
+    - cards
+    properties:
+      last4: last4
+      expires_at: expirationDate
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/visa-in-app-provisioning.yml#DELETE /universal/core/cards/{vCardID}
+    - openapi/_original/visa-in-app-provisioning.yml#GET /universal/core/cards/{vCardID}
+    - openapi/_original/visa-in-app-provisioning.yml#POST /universal/core/cards

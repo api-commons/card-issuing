@@ -17,14 +17,14 @@ count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| card | 64 | 59 | status 75%, id 68%, last4 59%, type 59% | cards 53, card 15, physical_cards 1, physical-cards 1 |
+| card | 65 | 60 | status 73%, id 67%, last4 60%, type 58% | cards 54, card 15, physical_cards 1, physical-cards 1 |
 | cardholder | 28 | 27 | email 89%, last_name 74%, id 67%, first_name 63%, phone 59% | users 15, employees 6, user 6, cardholder 3 |
 | authorization | 16 | 16 | amount 75%, id 50%, merchant 50% | authorizations 9, authorization 6, authorisations 3, authorisation 1 |
 | card_transaction | 47 | 44 | amount 68%, id 68%, status 61%, merchant 59%, created_at 55%, type 50% | transactions 45, transaction 10 |
 | spending_control | 8 | 8 | id 50% | limits 6, spend_limits 1, velocitycontrols 1, authcontrols 1 |
 | card_program | 12 | 12 | created_at 75%, id 75%, name 67%, updated_at 50% | products 8, programs 3, card_programs 1, cardproducts 1 |
 
-Cohort: 740 providers with harvested OpenAPI, 64 crosswalks. Of the providers exposing a card: 70% create, 81% list, 77% fetch, 41% update, 23% delete. Generated 2026-11-10 by build.py.
+Cohort: 740 providers with harvested OpenAPI, 65 crosswalks. Of the providers exposing a card: 71% create, 80% list, 77% fetch, 40% update, 25% delete. Generated 2026-11-10 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

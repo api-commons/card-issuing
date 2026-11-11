@@ -64,47 +64,47 @@ shared_specs: {}
 concepts:
   card:
     segments_seen:
-      cards: 53
+      cards: 54
       card: 15
       physical_cards: 1
       physical-cards: 1
       virtual-cards: 1
-    providers_exposing: 64
-    providers_with_readable_schema: 59
+    providers_exposing: 65
+    providers_with_readable_schema: 60
     operations:
     - operation: GET collection
       providers: 52
-      share: 0.812
+      share: 0.8
       tier: core
     - operation: GET item
-      providers: 49
-      share: 0.766
+      providers: 50
+      share: 0.769
       tier: core
     - operation: POST collection
-      providers: 45
-      share: 0.703
+      providers: 46
+      share: 0.708
       tier: core
     - operation: UPDATE item
       providers: 26
-      share: 0.406
+      share: 0.4
       tier: extended
     - operation: DELETE item
-      providers: 15
-      share: 0.234
+      providers: 16
+      share: 0.246
       tier: extended
     - operation: POST item
       providers: 5
-      share: 0.078
+      share: 0.077
       tier: long-tail
     - operation: UPDATE collection
       providers: 1
-      share: 0.016
+      share: 0.015
       tier: long-tail
     properties:
     - name: status
       tier: core
       providers: 44
-      share: 0.746
+      share: 0.733
       type: string
       spellings:
       - status
@@ -114,7 +114,7 @@ concepts:
     - name: id
       tier: core
       providers: 40
-      share: 0.678
+      share: 0.667
       type: string
       spellings:
       - id
@@ -123,8 +123,8 @@ concepts:
       - uuid
     - name: last4
       tier: core
-      providers: 35
-      share: 0.593
+      providers: 36
+      share: 0.6
       type: string
       spellings:
       - last4
@@ -138,7 +138,7 @@ concepts:
     - name: type
       tier: core
       providers: 35
-      share: 0.593
+      share: 0.583
       type: string
       spellings:
       - type
@@ -149,7 +149,7 @@ concepts:
     - name: created_at
       tier: extended
       providers: 29
-      share: 0.492
+      share: 0.483
       type: string
       spellings:
       - created_at
@@ -161,14 +161,14 @@ concepts:
       - created_time
     - name: expires_at
       tier: extended
-      providers: 24
-      share: 0.407
+      providers: 25
+      share: 0.417
       type: string
       spellings:
       - expiry
+      - expirationDate
       - expiryDate
       - expiration
-      - expirationDate
       - expiration_date
       - expiry_date
       - expiration_time
@@ -176,7 +176,7 @@ concepts:
     - name: cardholder_id
       tier: extended
       providers: 23
-      share: 0.39
+      share: 0.383
       type: string
       spellings:
       - customer_id
@@ -190,7 +190,7 @@ concepts:
     - name: name
       tier: extended
       providers: 22
-      share: 0.373
+      share: 0.367
       type: string
       spellings:
       - name
@@ -204,7 +204,7 @@ concepts:
     - name: card_id
       tier: extended
       providers: 16
-      share: 0.271
+      share: 0.267
       type: string
       spellings:
       - cardId
@@ -216,7 +216,7 @@ concepts:
     - name: brand
       tier: extended
       providers: 14
-      share: 0.237
+      share: 0.233
       type: string
       spellings:
       - brand
@@ -226,7 +226,7 @@ concepts:
     - name: currency
       tier: extended
       providers: 14
-      share: 0.237
+      share: 0.233
       type: string
       spellings:
       - currency
@@ -235,7 +235,7 @@ concepts:
     - name: metadata
       tier: extended
       providers: 14
-      share: 0.237
+      share: 0.233
       type: object
       spellings:
       - metadata
@@ -245,7 +245,7 @@ concepts:
     - name: account_id
       tier: extended
       providers: 13
-      share: 0.22
+      share: 0.217
       type: string
       spellings:
       - account_id
@@ -255,7 +255,7 @@ concepts:
     - name: exp_month
       tier: extended
       providers: 13
-      share: 0.22
+      share: 0.217
       type: integer
       spellings:
       - expiryMonth
@@ -266,7 +266,7 @@ concepts:
     - name: exp_year
       tier: extended
       providers: 13
-      share: 0.22
+      share: 0.217
       type: integer
       spellings:
       - expiryYear
@@ -277,7 +277,7 @@ concepts:
     - name: updated_at
       tier: extended
       providers: 12
-      share: 0.203
+      share: 0.2
       type: string
       spellings:
       - updated_at
@@ -285,7 +285,7 @@ concepts:
       - updated
       - last_modified_time
       - updated_time
-    long_tail_count: 539
+    long_tail_count: 544
     long_tail_sample:
     - shipping
     - billing_address
