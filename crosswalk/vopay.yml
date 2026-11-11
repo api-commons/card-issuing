@@ -17,10 +17,11 @@ concepts:
     properties:
       amount: Amount
       merchant: MerchantName
+      type: TransactionType
       currency: Currency
       transaction_id: TransactionID
       updated_at: LastModified
-    core_coverage: 0.333
+    core_coverage: 0.5
     evidence:
     - openapi/_original/vopay-account-api-reference.json#GET /account/subaccount/transactions
     - openapi/_original/vopay-account-api-reference.json#GET /account/transactions

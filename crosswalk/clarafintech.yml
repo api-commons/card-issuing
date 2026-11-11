@@ -28,8 +28,8 @@ concepts:
       status: status
       created_at: createdAt
       name:
-      - name
       - fullName
+      - name
     core_coverage: 0.8
     evidence:
     - openapi/_original/clarafintech-openapi.json#DELETE /api/v3/users/{uuid}
@@ -43,8 +43,8 @@ concepts:
     properties:
       amount: amountValue
       id: uuid
-      status: status
       merchant: merchant
+      status: status
       type: type
       card_id: card
     core_coverage: 0.833

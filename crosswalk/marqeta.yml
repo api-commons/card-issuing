@@ -99,18 +99,18 @@ concepts:
     properties:
       amount: amount
       id: token
-      status:
-      - status
-      - state
       merchant:
       - merchant
       - card_acceptor
-      created_at: created_time
+      status:
+      - status
+      - state
       type: type
+      created_at: created_time
+      currency: currency_code
       card_id:
       - card_token
       - card
-      currency: currency_code
       settled_at: settlement_date
       updated_at: last_modified_time
       cardholder_id: user_token
@@ -147,8 +147,8 @@ concepts:
       updated_at:
       - last_modified_time
       - updated_time
-      active: active
       currency: currency_code
+      active: active
       status: status
     core_coverage: 1.0
     evidence:

@@ -41,8 +41,8 @@ concepts:
     - transactions
     properties:
       amount: amount
-      status: status
       merchant: merchantName
+      status: status
       currency: currency
       transaction_id: transactionId
     core_coverage: 0.5

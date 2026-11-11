@@ -9,9 +9,7 @@ concepts:
     properties:
       status: status
       id: id
-      created_at:
-      - created
-      - createdAt
+      created_at: createdAt
       name: label
     core_coverage: 0.5
     evidence:
@@ -41,8 +39,11 @@ concepts:
   card_transaction:
     path_segment:
     - transactions
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      status: status
+      type: type
+      card_id: card
+    core_coverage: 0.333
     evidence:
     - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/transactions
   card_program:
@@ -54,8 +55,8 @@ concepts:
       name: name
       description: description
       updated_at: updatedAt
-      active: active
       currency: currency
+      active: active
       images: images
     core_coverage: 1.0
     evidence:

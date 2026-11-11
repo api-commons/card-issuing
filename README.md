@@ -20,7 +20,7 @@ count of providers.
 | card | 65 | 60 | status 73%, id 67%, last4 60%, type 58% | cards 54, card 16, physical_cards 1, physical-cards 1 |
 | cardholder | 28 | 27 | email 89%, last_name 74%, id 67%, first_name 63%, phone 59% | users 15, employees 6, user 6, cardholder 3 |
 | authorization | 16 | 16 | amount 75%, id 50%, merchant 50% | authorizations 9, authorization 6, authorisations 3, authorisation 1 |
-| card_transaction | 47 | 44 | amount 68%, id 68%, status 61%, merchant 59%, created_at 55%, type 50% | transactions 45, transaction 10 |
+| card_transaction | 47 | 44 | amount 73%, id 70%, merchant 66%, status 64%, type 61%, created_at 57% | transactions 45, transaction 10 |
 | spending_control | 8 | 8 | id 50% | limits 6, spend_limits 1, velocitycontrols 1, authcontrols 1 |
 | card_program | 13 | 13 | created_at 77%, id 77%, name 69% | products 8, programs 4, card_programs 1, cardproducts 1 |
 

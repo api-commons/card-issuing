@@ -25,12 +25,12 @@ concepts:
     properties:
       amount: amount
       id: id
-      status: status
       merchant: merchantName
-      created_at: createdAt
+      status: status
       type: type
-      card_id: cardId
+      created_at: createdAt
       currency: currency
+      card_id: cardId
       settled_at:
       - postedAt
       - settledAt

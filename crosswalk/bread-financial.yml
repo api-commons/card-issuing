@@ -23,8 +23,8 @@ concepts:
     properties:
       amount: totalAmount
       id: id
-      status: status
       merchant: description
+      status: status
       created_at: createdAt
       updated_at: updatedAt
     core_coverage: 0.833

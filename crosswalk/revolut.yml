@@ -28,10 +28,10 @@ concepts:
     - transaction
     properties:
       id: id
-      status: state
       merchant: merchant
-      created_at: created_at
+      status: state
       type: type
+      created_at: created_at
       card_id: card
       updated_at: updated_at
     core_coverage: 0.833

@@ -45,8 +45,8 @@ concepts:
     properties:
       amount: amount
       status: status
-      created_at: createdOn
       type: transactionType
+      created_at: createdOn
       currency: currency
       transaction_id: transactionID
     core_coverage: 0.667

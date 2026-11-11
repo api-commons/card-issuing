@@ -24,11 +24,11 @@ concepts:
     properties:
       amount: amount
       status: status
-      created_at: createdAt
       type: type
+      created_at: createdAt
       currency: currency
-      settled_at: settlementDate
       transaction_id: transactionId
+      settled_at: settlementDate
       cardholder_id: customerId
     core_coverage: 0.667
     evidence:

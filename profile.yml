@@ -286,7 +286,7 @@ concepts:
       - updated
       - last_modified_time
       - updated_time
-    long_tail_count: 552
+    long_tail_count: 589
     long_tail_sample:
     - shipping
     - billing_address
@@ -294,11 +294,10 @@ concepts:
     - cvv
     - description
     - pan
-    - cards
     - spending_controls
-    - number
     - bin
     - card_number
+    - number
     - product
     - account_number
     - card_scheme
@@ -328,6 +327,7 @@ concepts:
     - assigned_to
     - assignees
     - authentication
+    - billing_name
   cardholder:
     segments_seen:
       users: 15
@@ -482,7 +482,7 @@ concepts:
       - updated_at
       - updatedAt
       - last_modified_time
-    long_tail_count: 498
+    long_tail_count: 505
     long_tail_sample:
     - metadata
     - nationality
@@ -499,10 +499,12 @@ concepts:
     - middle_name
     - title
     - type
+    - account_id
     - account_number
     - account_type
     - contact_id
     - creation_time
+    - currency
     - custom_reference_id
     - department
     - department_id
@@ -522,8 +524,6 @@ concepts:
     - manager_id
     - marital_status
     - middlename
-    - mobile_access
-    - mobile_number
   authorization:
     segments_seen:
       authorizations: 9
@@ -641,7 +641,7 @@ concepts:
       - createdAt
       - createdOn
       - created
-    long_tail_count: 203
+    long_tail_count: 204
     long_tail_sample:
     - cash_back_amount
     - mid
@@ -717,8 +717,8 @@ concepts:
     properties:
     - name: amount
       tier: core
-      providers: 30
-      share: 0.682
+      providers: 32
+      share: 0.727
       type: number
       spellings:
       - amount
@@ -729,26 +729,18 @@ concepts:
       - Amount
     - name: id
       tier: core
-      providers: 30
-      share: 0.682
+      providers: 31
+      share: 0.705
       type: string
       spellings:
       - id
       - token
       - uuid
       - cardTransactionId
-    - name: status
-      tier: core
-      providers: 27
-      share: 0.614
-      type: string
-      spellings:
-      - status
-      - state
     - name: merchant
       tier: core
-      providers: 26
-      share: 0.591
+      providers: 29
+      share: 0.659
       type: string
       spellings:
       - description
@@ -759,10 +751,28 @@ concepts:
       - card_acceptor
       - merchant_data
       - MerchantName
+    - name: status
+      tier: core
+      providers: 28
+      share: 0.636
+      type: string
+      spellings:
+      - status
+      - state
+    - name: type
+      tier: core
+      providers: 27
+      share: 0.614
+      type: string
+      spellings:
+      - type
+      - transactionType
+      - transaction_type
+      - TransactionType
     - name: created_at
       tier: core
-      providers: 24
-      share: 0.545
+      providers: 25
+      share: 0.568
       type: string
       spellings:
       - created_at
@@ -770,17 +780,17 @@ concepts:
       - created
       - created_time
       - creationDate
-      - createdOn
       - createdDate
-    - name: type
-      tier: core
-      providers: 22
-      share: 0.5
+      - createdOn
+    - name: currency
+      tier: extended
+      providers: 19
+      share: 0.432
       type: string
       spellings:
-      - type
-      - transactionType
-      - transaction_type
+      - currency
+      - currency_code
+      - Currency
     - name: card_id
       tier: extended
       providers: 18
@@ -792,38 +802,29 @@ concepts:
       - card_id
       - card_token
       - cardToken
-    - name: currency
-      tier: extended
-      providers: 17
-      share: 0.386
-      type: string
-      spellings:
-      - currency
-      - currency_code
-      - Currency
-    - name: settled_at
-      tier: extended
-      providers: 12
-      share: 0.273
-      type: string
-      spellings:
-      - settlement_date
-      - posted_at
-      - settlementDate
-      - settledAt
-      - postedAt
-      - postedDate
-      - settled_at
     - name: transaction_id
       tier: extended
-      providers: 12
-      share: 0.273
+      providers: 15
+      share: 0.341
       type: string
       spellings:
       - transactionId
       - transaction_id
       - transactionID
       - TransactionID
+    - name: settled_at
+      tier: extended
+      providers: 14
+      share: 0.318
+      type: string
+      spellings:
+      - settlementDate
+      - settlement_date
+      - posted_at
+      - postedDate
+      - settledAt
+      - postedAt
+      - settled_at
     - name: updated_at
       tier: extended
       providers: 12
@@ -839,8 +840,8 @@ concepts:
       - LastModified
     - name: cardholder_id
       tier: extended
-      providers: 9
-      share: 0.205
+      providers: 10
+      share: 0.227
       type: string
       spellings:
       - customerId
@@ -849,48 +850,48 @@ concepts:
       - user_token
       - user_id
       - cardholder
-    long_tail_count: 751
+    long_tail_count: 787
     long_tail_sample:
     - account_id
+    - category
     - metadata
     - date
-    - category
-    - memo
     - merchant_category_code
+    - memo
     - order_id
     - source
+    - transaction_date
     - payment_method
     - approval_code
     - exchange_rate
+    - fee
+    - fee_amount
     - fees
+    - foreign_amount
+    - has_attachments
     - masked_pan
     - note
     - notes
     - response_code
     - transaction_amount
-    - transaction_date
     - wallet_id
     - authorized_at
-    - content
+    - booking_date
+    - channel
+    - check_number
     - decline_reason
     - details
     - event_date
     - external_id
-    - fee
-    - fee_amount
-    - has_attachments
     - location
     - location_id
     - merchant_id
+    - name
     - purchase_details
+    - reference
     - reference_number
+    - sub_category
     - terminal_id
-    - account
-    - account_number
-    - account_subtype
-    - ach_info
-    - acquirer_reference_data
-    - amount_currency
   spending_control:
     segments_seen:
       limits: 6
@@ -1059,6 +1060,14 @@ concepts:
       - last_modified_time
       - updatedAt
       - updated_time
+    - name: currency
+      tier: extended
+      providers: 5
+      share: 0.385
+      type: string
+      spellings:
+      - currency
+      - currency_code
     - name: active
       tier: extended
       providers: 4
@@ -1066,14 +1075,13 @@ concepts:
       type: boolean
       spellings:
       - active
-    - name: currency
+    - name: status
       tier: extended
       providers: 4
       share: 0.308
       type: string
       spellings:
-      - currency
-      - currency_code
+      - status
     - name: images
       tier: extended
       providers: 3
@@ -1081,13 +1089,6 @@ concepts:
       type: array
       spellings:
       - images
-    - name: status
-      tier: extended
-      providers: 3
-      share: 0.231
-      type: string
-      spellings:
-      - status
     - name: type
       tier: extended
       providers: 3
@@ -1095,7 +1096,7 @@ concepts:
       type: string
       spellings:
       - type
-    long_tail_count: 101
+    long_tail_count: 102
     long_tail_sample:
     - accrual_rules
     - end_date
@@ -1103,20 +1104,18 @@ concepts:
     - location_ids
     - metadata
     - price
-    - product_type
+    - product_id
     - reward_tiers
     - start_date
     - terminology
-    - accrual_payout_schedule
+    - accrual_period
     - available
     - bank
     - base_price
     - billing_account_id
     - billing_recurrence
-    - body
     - bundle
     - bundle_items
-    - calculation_method
     - cancel_url
     - card_product_tokens
     - categories
@@ -1137,3 +1136,5 @@ concepts:
     - delivery
     - delivery_year
     - digital_wallet_tokenization
+    - disabled_on
+    - form

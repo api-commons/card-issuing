@@ -33,10 +33,10 @@ concepts:
     properties:
       amount: amount
       id: token
-      status: status
       merchant: description
-      created_at: created_at
+      status: status
       type: type
+      created_at: created_at
       currency: currency
       updated_at: updated_at
     core_coverage: 1.0

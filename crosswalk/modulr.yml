@@ -39,7 +39,13 @@ concepts:
   card_transaction:
     path_segment:
     - transactions
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      amount: amount
+      id: id
+      merchant: description
+      type: type
+      currency: currency
+      settled_at: postedDate
+    core_coverage: 0.667
     evidence:
     - openapi/_original/modulr-api.json#GET /accounts/{accountId}/transactions

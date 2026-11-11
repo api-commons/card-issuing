@@ -43,8 +43,8 @@ concepts:
       merchant:
       - description
       - merchant
-      created_at: created_at
       type: type
+      created_at: created_at
       settled_at: settled_at
       updated_at: updated_at
     core_coverage: 0.833

@@ -53,7 +53,6 @@ concepts:
     - transactions
     properties:
       id: cardTransactionId
-      card_id: card
       transaction_id: transactionId
     core_coverage: 0.167
     evidence:

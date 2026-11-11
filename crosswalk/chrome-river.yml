@@ -29,12 +29,12 @@ concepts:
     properties:
       amount: amount
       id: id
-      status: state
       merchant: merchant
-      created_at: created_at
+      status: state
       type: type
-      card_id: card
+      created_at: created_at
       currency: currency_code
+      card_id: card
       settled_at: posted_at
     core_coverage: 1.0
     evidence:

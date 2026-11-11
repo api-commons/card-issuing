@@ -32,10 +32,10 @@ concepts:
     properties:
       amount: amount
       id: id
-      status: state
       merchant: merchant_name
-      card_id: card_id
+      status: state
       currency: currency_code
+      card_id: card_id
       cardholder_id: user_id
     core_coverage: 0.667
     evidence:

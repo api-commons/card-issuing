@@ -33,8 +33,15 @@ concepts:
   card_transaction:
     path_segment:
     - transactions
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      amount: amount
+      merchant:
+      - description
+      - merchantName
+      type: transactionType
+      currency: currency
+      transaction_id: transactionId
+    core_coverage: 0.5
     evidence:
     - openapi/_original/fiserv-bankinghub-openapi.yml#GET /banking/accounts/{accountId}/transactions
     - openapi/_original/fiserv-carddeveloper-openapi.yml#GET /v1/accounts/{accountNumber}/transactions

@@ -27,13 +27,16 @@ concepts:
     - transaction
     - transactions
     properties:
-      amount: amountCents
+      amount:
+      - amountCents
+      - amount
       id: id
-      status: status
       merchant:
       - description
       - merchantData
+      status: status
       card_id: cardId
+      transaction_id: transactionId
     core_coverage: 0.667
     evidence:
     - openapi/_original/slash-openapi-original.json#GET /fdx/accounts/{accountId}/transactions

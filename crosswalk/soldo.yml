@@ -47,8 +47,8 @@ concepts:
     properties:
       amount: amount
       id: id
-      status: status
       merchant: merchant
+      status: status
       card_id: card_id
       settled_at: settlement_date
       updated_at: update_time

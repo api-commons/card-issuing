@@ -50,8 +50,8 @@ concepts:
       amount: amount
       id: id
       merchant: merchant
-      created_at: createdAt
       type: transactionType
+      created_at: createdAt
       card_id: card
       cardholder_id: customerId
     core_coverage: 0.833

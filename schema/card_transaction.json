@@ -8,8 +8,8 @@
     "amount": {
       "type": "number",
       "x-commons-tier": "core",
-      "x-commons-share": 0.682,
-      "x-commons-providers": 30,
+      "x-commons-share": 0.727,
+      "x-commons-providers": 32,
       "x-commons-spellings": [
         "amount",
         "amountCents",
@@ -22,8 +22,8 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.682,
-      "x-commons-providers": 30,
+      "x-commons-share": 0.705,
+      "x-commons-providers": 31,
       "x-commons-spellings": [
         "id",
         "token",
@@ -31,21 +31,11 @@
         "cardTransactionId"
       ]
     },
-    "status": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.614,
-      "x-commons-providers": 27,
-      "x-commons-spellings": [
-        "status",
-        "state"
-      ]
-    },
     "merchant": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.591,
-      "x-commons-providers": 26,
+      "x-commons-share": 0.659,
+      "x-commons-providers": 29,
       "x-commons-spellings": [
         "description",
         "merchant",
@@ -57,31 +47,53 @@
         "MerchantName"
       ]
     },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.636,
+      "x-commons-providers": 28,
+      "x-commons-spellings": [
+        "status",
+        "state"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.614,
+      "x-commons-providers": 27,
+      "x-commons-spellings": [
+        "type",
+        "transactionType",
+        "transaction_type",
+        "TransactionType"
+      ]
+    },
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.545,
-      "x-commons-providers": 24,
+      "x-commons-share": 0.568,
+      "x-commons-providers": 25,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
         "created",
         "created_time",
         "creationDate",
-        "createdOn",
-        "createdDate"
+        "createdDate",
+        "createdOn"
       ],
       "format": "date-time"
     },
-    "type": {
+    "currency": {
       "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.5,
-      "x-commons-providers": 22,
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.432,
+      "x-commons-providers": 19,
       "x-commons-spellings": [
-        "type",
-        "transactionType",
-        "transaction_type"
+        "currency",
+        "currency_code",
+        "Currency"
       ]
     },
     "card_id": {
@@ -97,44 +109,33 @@
         "cardToken"
       ]
     },
-    "currency": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.386,
-      "x-commons-providers": 17,
-      "x-commons-spellings": [
-        "currency",
-        "currency_code",
-        "Currency"
-      ]
-    },
-    "settled_at": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.273,
-      "x-commons-providers": 12,
-      "x-commons-spellings": [
-        "settlement_date",
-        "posted_at",
-        "settlementDate",
-        "settledAt",
-        "postedAt",
-        "postedDate",
-        "settled_at"
-      ],
-      "format": "date-time"
-    },
     "transaction_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.273,
-      "x-commons-providers": 12,
+      "x-commons-share": 0.341,
+      "x-commons-providers": 15,
       "x-commons-spellings": [
         "transactionId",
         "transaction_id",
         "transactionID",
         "TransactionID"
       ]
+    },
+    "settled_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.318,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "settlementDate",
+        "settlement_date",
+        "posted_at",
+        "postedDate",
+        "settledAt",
+        "postedAt",
+        "settled_at"
+      ],
+      "format": "date-time"
     },
     "updated_at": {
       "type": "string",
@@ -155,8 +156,8 @@
     "cardholder_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.205,
-      "x-commons-providers": 9,
+      "x-commons-share": 0.227,
+      "x-commons-providers": 10,
       "x-commons-spellings": [
         "customerId",
         "owner_id",

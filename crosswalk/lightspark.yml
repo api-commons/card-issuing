@@ -41,10 +41,10 @@ concepts:
     - transactions
     properties:
       id: id
-      status: status
       merchant: description
-      created_at: createdAt
+      status: status
       type: type
+      created_at: createdAt
       settled_at: settledAt
       updated_at: updatedAt
       cardholder_id: customerId

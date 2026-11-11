@@ -32,8 +32,8 @@ concepts:
       amount: amount
       id: id
       merchant: description
-      created_at: created_at
       type: type
+      created_at: created_at
       currency: currency
     core_coverage: 0.833
     evidence:

@@ -40,10 +40,10 @@ concepts:
     properties:
       amount: billingAmount
       id: id
-      status: state
       merchant: merchant
-      created_at: createdDate
+      status: state
       type: type
+      created_at: createdDate
       card_id: cardToken
       transaction_id: transactionId
     core_coverage: 1.0

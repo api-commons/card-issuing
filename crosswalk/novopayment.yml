@@ -45,8 +45,8 @@ concepts:
       merchant:
       - description
       - merchantName
-      created_at: creationDate
       type: transactionType
+      created_at: creationDate
       transaction_id: transactionId
     core_coverage: 0.667
     evidence:

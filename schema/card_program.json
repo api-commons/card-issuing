@@ -63,6 +63,16 @@
       ],
       "format": "date-time"
     },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.385,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code"
+      ]
+    },
     "active": {
       "type": "boolean",
       "x-commons-tier": "extended",
@@ -72,14 +82,13 @@
         "active"
       ]
     },
-    "currency": {
+    "status": {
       "type": "string",
       "x-commons-tier": "extended",
       "x-commons-share": 0.308,
       "x-commons-providers": 4,
       "x-commons-spellings": [
-        "currency",
-        "currency_code"
+        "status"
       ]
     },
     "images": {
@@ -89,15 +98,6 @@
       "x-commons-providers": 3,
       "x-commons-spellings": [
         "images"
-      ]
-    },
-    "status": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.231,
-      "x-commons-providers": 3,
-      "x-commons-spellings": [
-        "status"
       ]
     },
     "type": {

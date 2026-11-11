@@ -21,10 +21,15 @@ concepts:
     - transactions
     properties:
       amount: amount
+      merchant: description
       status: status
+      type: transactionType
+      created_at: createdDate
       currency: currency
       transaction_id: transactionId
-    core_coverage: 0.333
+      settled_at: settlementDate
+      cardholder_id: customerId
+    core_coverage: 0.833
     evidence:
     - openapi/_original/temenos-data-hub-openapi.yml#GET /analytics/transactions
     - openapi/_original/temenos-data-hub-openapi.yml#GET /operational/transactions
@@ -34,7 +39,10 @@ concepts:
   card_program:
     path_segment:
     - products
-    properties: {}
+    properties:
+      description: description
+      currency: currency
+      status: status
     core_coverage: 0.0
     evidence:
     - openapi/_original/temenos-transact-openapi.yml#GET /product/products

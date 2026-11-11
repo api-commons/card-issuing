@@ -43,8 +43,8 @@ concepts:
     properties:
       amount: amount
       status: state
-      created_at: created_time
       type: transaction_type
+      created_at: created_time
       currency: currency
       transaction_id: transaction_id
       updated_at: updated_time

@@ -53,10 +53,9 @@ concepts:
     - products
     properties:
       id:
-      - id
       - card_program_id
+      - id
       name: name
-      description: description
       updated_at: last_modified_time
       active: active
     core_coverage: 0.667

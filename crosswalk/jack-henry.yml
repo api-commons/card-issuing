@@ -45,13 +45,13 @@ concepts:
     properties:
       amount: amount
       id: id
-      status: status
       merchant:
       - description
       - merchant
+      status: status
       type: type
-      settled_at: postedDate
       transaction_id: transactionId
+      settled_at: postedDate
     core_coverage: 0.833
     evidence:
     - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/accounts/{accountId}/transactions
