@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
   title: Card Issuing (API Commons)
-  version: 0.1.0-draft.20261111
-  description: 'The common Card Issuing interface, distilled from the harvested OpenAPI of 740 providers in the
+  version: 0.1.0-draft.20261112
+  description: 'The common Card Issuing interface, distilled from the harvested OpenAPI of 742 providers in the
     APIs.io catalog. Not a product: no one serves this API. It is the shape the market already shares, measured,
     so that providers, agents and integrators can map to one vocabulary. See profile.yml.'
   license:

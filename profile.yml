@@ -1,7 +1,7 @@
 context: card-issuing
 name: Card Issuing
-generated: '2026-11-11'
-version: 0.1.0-draft.20261111
+generated: '2026-11-12'
+version: 0.1.0-draft.20261112
 status: draft
 cohort:
   tags:
@@ -20,7 +20,7 @@ cohort:
   - BaaS
   - Embedded Finance
   - Neobank
-  providers_with_harvested_openapi: 740
+  providers_with_harvested_openapi: 742
 thresholds:
   core: 0.5
   extended: 0.2

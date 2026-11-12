@@ -109,8 +109,8 @@
     "context": "card-issuing",
     "concept": "authorization",
     "providers": 16,
-    "generated": "2026-11-11",
-    "version": "0.1.0-draft.20261111",
+    "generated": "2026-11-12",
+    "version": "0.1.0-draft.20261112",
     "status": "draft"
   }
 }

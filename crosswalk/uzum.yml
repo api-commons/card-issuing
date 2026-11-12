@@ -1,7 +1,7 @@
 provider: uzum
 apis_io: https://apis.io/providers/uzum/
 context: card-issuing
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   card:
     path_segment:

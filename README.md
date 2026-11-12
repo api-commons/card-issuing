@@ -24,7 +24,7 @@ count of providers.
 | spending_control | 8 | 8 | id 50% | limits 6, spend_limits 1, velocitycontrols 1, authcontrols 1 |
 | card_program | 13 | 13 | created_at 77%, id 77%, name 69% | products 8, programs 4, card_programs 1, cardproducts 1 |
 
-Cohort: 740 providers with harvested OpenAPI, 65 crosswalks. Of the providers exposing a card: 72% create, 80% list, 77% fetch, 40% update, 25% delete. Generated 2026-11-11 by build.py.
+Cohort: 742 providers with harvested OpenAPI, 65 crosswalks. Of the providers exposing a card: 72% create, 80% list, 77% fetch, 40% update, 25% delete. Generated 2026-11-12 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The
